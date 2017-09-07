@@ -1,0 +1,8 @@
+{
+  "home" : {
+    "greeter" : {
+      "header": "Angular - Boilerplate",
+      "info": "Have a look at the ReadMe file for more information on how to setup your own project!"
+    }
+  }
+}
