@@ -1,12 +1,12 @@
 # AngularBoilerplate
 
-This project is a reference project for Angular 5.1.0. 
+This project is a reference project for *Angular 5.1.0.* 
 
 The project could be used as a reference, guide or a starter project for new internal projects.
 The most used modules and libaries has been implemented to this project.
 An explanation for all the components and modules used for this project can be found further down in the project. 
 
-The project is following John Papas styleguide: https://angular.io/guide/styleguide
+The project is following *John Papas Styleguide*: https://angular.io/guide/styleguide
 
 The following boilerplate was mainly created using Angular Cli.
 
