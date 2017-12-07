@@ -9,8 +9,11 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {MomentModule} from 'angular2-moment';
-import {ServiceModule} from "./services/services.module";
-import {FormsModule} from "@angular/forms";
+import {ServiceModule} from './services/services.module';
+import {FormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HttpInterceptorHandler} from './shared/interceptor/HttpInterceptorHandler';
+import {NavigationDestinationModule} from './navigation-destination/navigation-destination.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -26,6 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ErrorModule,
     FormsModule,
     HomeModule,
+    NavigationDestinationModule,
     HttpClientModule,
     MomentModule,
     ServiceModule,
@@ -37,7 +41,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })],
   exports: [],
-  providers: [],
+  providers: [{
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorHandler,
+      multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

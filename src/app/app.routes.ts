@@ -5,11 +5,16 @@
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {ErrorComponent} from './error/error.component';
+import {NavigationDestinationComponent} from './navigation-destination/navigation-destination.component';
 
 const APP_ROUTES: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'navigate',
+    component: NavigationDestinationComponent
   },
   {
     path: '**',

@@ -1,8 +1,14 @@
 {
   "home" : {
+    "welcome" : "Welcome to this Angular Boilerplate",
+    "navigate" : "Navigate",
     "greeter" : {
       "header": "Angular - Boilerplate",
       "info": "Have a look at the ReadMe file for more information on how to setup your own project!"
     }
+  },
+  "navigation" : {
+    "welcome" : "You just navigated!",
+    "back" : "Back"
   }
 }

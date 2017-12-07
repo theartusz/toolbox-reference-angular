@@ -1,7 +1,7 @@
 /**
  * Created by orjanertkjern on 21/08/2017.
  */
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ExampleService} from '../../services/example.service';
 
 @Component({
@@ -11,22 +11,15 @@ import {ExampleService} from '../../services/example.service';
 })
 export class GreeterComponent implements OnInit {
 
-  exampleServiceWorks: boolean;
-  name: string;
-  greeting: string;
+  @Input() greetings: string;
 
   constructor(private exampleService: ExampleService) {
   }
 
   ngOnInit() {
-    this.exampleServiceWorks = this.exampleService.serviceExampleFunction();
+    if (!this.greetings)
+      this.greetings = 'home.welcome';
   }
 
-  scrollDown() {
-    window.scrollTo(0, document.body.scrollHeight);
-  }
 
-  sayHello() {
-    this.greeting = 'Hello ' + this.name + '!';
-  }
 }
