@@ -12,6 +12,7 @@ import {ExampleService} from '../../services/example.service';
 export class GreeterComponent implements OnInit {
 
   @Input() greetings: string;
+  isServiceWorking: boolean;
 
   constructor(private exampleService: ExampleService) {
   }
@@ -19,7 +20,18 @@ export class GreeterComponent implements OnInit {
   ngOnInit() {
     if (!this.greetings)
       this.greetings = 'home.welcome';
+
+    this.callService();
   }
 
+  private callService() {
+    this.exampleService.serviceExampleFunction().subscribe(
+      result => {
+        this.isServiceWorking = result;
+      },
+      err => {
+        console.log(err);
+      });
+  }
 
 }

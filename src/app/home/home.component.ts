@@ -10,6 +10,7 @@ import * as video from 'video-scroller';
 export class HomeComponent implements OnInit, AfterViewInit {
 
 
+
   constructor() {
   }
 

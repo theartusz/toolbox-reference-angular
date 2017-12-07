@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class ExampleService {
@@ -6,7 +7,7 @@ export class ExampleService {
   constructor() {
   }
 
-  serviceExampleFunction(): boolean {
-    return true;
+  serviceExampleFunction(): Observable<boolean> {
+    return Observable.of(true);
   }
 }
