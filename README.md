@@ -2,8 +2,9 @@
 
 This project is a reference project for *Angular 5.1.0.* 
 
-The project could be used as a reference, guide or a starter project for new internal projects.
-The most used modules and libaries has been implemented to this project.
+The project could be used as a reference, guide or a starter project for new or existing internal projects.
+The most used modules and libaries has been implemented into this project.
+
 An explanation for all the components and modules used for this project can be found further down in the project. 
 
 The project is following *John Papas Styleguide*: https://angular.io/guide/styleguide
