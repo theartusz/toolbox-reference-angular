@@ -3,7 +3,7 @@
  */
 
 import {NgModule} from '@angular/core';
-
+import {RouterModule} from '@angular/router';
 import {HomeComponent} from './home.component';
 import {GreeterComponent} from './greeter/greeter.component';
 import {TranslateModule} from '@ngx-translate/core';
@@ -12,7 +12,9 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    TranslateModule.forRoot(),
+    RouterModule, SharedModule.forRoot()
   ],
   exports: [],
   declarations: [

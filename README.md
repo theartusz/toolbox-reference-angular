@@ -1,28 +1,93 @@
 # AngularBoilerplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+This project is a reference project for *Angular 5.1.0.* 
 
-## Development server
+The project could be used as a reference, guide or a starter project for new or existing internal projects.
+The most used modules and libaries has been implemented into this project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+An explanation for all the components and modules used for this project can be found further down in the project. 
 
-## Code scaffolding
+The project is following *John Papas Styleguide*: https://angular.io/guide/styleguide
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The following boilerplate was mainly created using Angular Cli.
 
-## Build
+## Content
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* [Installation](#installation)
+* [Elements](#elements)
+* [External Modules](#externalModules)
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Start by cloning the project:
 
-## Running end-to-end tests
+```
+git clone https://github.com/evry-bergen/reference-angular.git
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+When the project is cloned, install the npm packages:
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You can now run the project, and the angular project should be visible at localhost:4200
+
+```
+npm start
+```
+
+To save 95 % build time, you can use the new Angular 5 feature
+
+```
+ng serve --aot
+```
+
+--aot will be standard when running npm start in future Angular versions.
+
+
+## Elements
+
+### Components
+
+In this refernce project there has been created a few components, mainly to describe the best pratice folder structure.
+The folder structure is based on John Papa's style guide: https://angular.io/guide/styleguide. This is also the official
+Angular 2 styleguide. 
+
+If we start with the priamry component, the ```app.component.html|ts|scss|spec``` we can see that it is using router outlet
+to control routing. The routes are defined in the ```app.routes.ts``` file. 
+
+The ```home.component``` is the main page of the website, defined by the ```app.rotes.ts``` file. It contains a sub component,
+```greeter.component.html|scss|ts|spec```. This components takes an input value to show the end users a kind greeting. 
+All components that is a part of the "main page" (home.component) is in the same module. 
+
+The next, and last component in this project is the ```navigation-destination.component.ts|html|spec|scss```. This project only
+describes a navigation route, as we can see in the ```app.routes.ts``` file. As this is a new routing destination, and not a part
+of the home.component, it has its own module. 
+
+An ```error.component.ts|html|scss|spec``` has also been provided to descibe how to handle 404 errors in Angular.
+
+### Services
+
+A simple ```example.service.ts``` has been included in the project to show the usage of services in Angular.
+It only returns a Observable that returns true value. An Obsevable is used to display how to handle them.
+
+The service is injected in the greeter component. It should only show the greeting if the service works as expected, and 
+the ```h1``` elements contains an *ngIf.
+
+### HTTP Interceptor
+
+A HTTP Interceptor is created as an reference. If you ever need to log based on status, or have to handle HTTP requests/response etc.
+somehow. This is the way to go. 
+
+
+## External Modules
+
+In the project a few external modules that we use frequently has been imported into the project, to show how to use them. 
+A detailed description of each of the modules will not be given. But a link to the GitHub repository is given as a reference.
+
+They are all implemented and used in the project. 
+
+### @ngx-translate
+
+https://github.com/ngx-translate

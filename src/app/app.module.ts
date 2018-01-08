@@ -3,30 +3,57 @@ import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MomentModule } from 'angular2-moment';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
-import { AppRouterModule } from './app.routes';
+import {HttpInterceptorHandler} from './shared/interceptor/HttpInterceptorHandler';
+import {NavigationDestinationModule} from './navigation-destination/navigation-destination.module';
+
+// app component
 import { AppComponent } from './app.component';
-import { ErrorModule } from './error/error.module';
 
 // Module
+import { AppRouterModule } from './app.routes';
 import { LoginModule } from './Login/shared/login.module';
 import { AdminModule } from './admin/shared/admin.module';
 import { ServiceModule } from './services/services.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import {ErrorModule} from './error/error.module';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    AppRouterModule, BrowserModule, ErrorModule,
-    MomentModule, SharedModule.forRoot(),
-    LoginModule, AdminModule, ServiceModule, HomeModule
-  ],
+    AppRouterModule,
+    BrowserModule,
+    ErrorModule,
+    FormsModule,
+    HomeModule,
+    NavigationDestinationModule,
+    HttpClientModule,
+    MomentModule,
+    ServiceModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })],
   exports: [],
-  providers: [],
+  providers: [{
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorHandler,
+      multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

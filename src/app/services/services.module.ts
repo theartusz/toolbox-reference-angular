@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-
+import 'rxjs';
 import {ExampleService} from './example.service';
 
 @NgModule({
