@@ -2,7 +2,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 // Component
-import { LoginComponent } from '../login.Component';
+import { LoginComponent } from '../login.component';
 
 const LOGIN_ROUTES: Routes = [
   {

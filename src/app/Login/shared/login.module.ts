@@ -6,7 +6,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import { LoginRouterModule } from './login.route';
 
 // Component
-import { LoginComponent } from '../login.Component';
+import { LoginComponent } from '../login.component';
 import { LoginService } from './login.service';
 
 

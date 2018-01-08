@@ -32,15 +32,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent
   ],
   imports: [
+    AdminModule,
     AppRouterModule,
     BrowserModule,
     ErrorModule,
     FormsModule,
     HomeModule,
-    NavigationDestinationModule,
     HttpClientModule,
+    LoginModule,
     MomentModule,
+    NavigationDestinationModule,
     ServiceModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
