@@ -3,18 +3,18 @@
  */
 
 import {NgModule} from '@angular/core';
-
+import {RouterModule} from '@angular/router';
 import {HomeComponent} from './home.component';
 import {GreeterComponent} from './greeter/greeter.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     TranslateModule.forRoot(),
-    RouterModule
+    RouterModule, SharedModule.forRoot()
   ],
   exports: [],
   declarations: [
