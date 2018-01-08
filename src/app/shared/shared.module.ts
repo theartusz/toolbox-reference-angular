@@ -5,13 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { RouterModule } from '@angular/router';
+import { Http } from '@angular/http';
 
 // Services
 import { AuthenticatedHttpService, SpinnerService } from './index.shared';
 
+
 // create loader for translation
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, 'i18n/', '.json');
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
     imports: [
@@ -39,15 +41,12 @@ export class SharedModule {
     static forRoot() {
         return {
             ngModule: SharedModule,
-            providers: [
-                SpinnerService,
-                { provide: HttpClient, useClass: AuthenticatedHttpService }
-            ]
+            providers: []
         };
     }
 
     constructor(private translate: TranslateService) {
         this.translate.addLangs(['en', 'nb']);
-        this.translate.use('en');
+        this.translate.use('nb');
     }
 }

@@ -8,10 +8,11 @@ import {HomeComponent} from './home.component';
 import {GreeterComponent} from './greeter/greeter.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {BrowserModule} from '@angular/platform-browser';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule, SharedModule.forRoot(),
     TranslateModule.forRoot()
   ],
   exports: [],
