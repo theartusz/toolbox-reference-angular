@@ -22,7 +22,7 @@ import { HomeModule } from './home/home.module';
   ],
   imports: [
     AppRouterModule, BrowserModule, ErrorModule,
-    MomentModule,
+    MomentModule, SharedModule.forRoot(),
     LoginModule, AdminModule, ServiceModule, HomeModule
   ],
   exports: [],

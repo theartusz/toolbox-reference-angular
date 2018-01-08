@@ -13,8 +13,9 @@ import { AuthenticatedHttpService, SpinnerService } from './index.shared';
 
 // create loader for translation
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+    return new TranslateHttpLoader(http);
+  }
+  
 @NgModule({
     imports: [
         HttpClientModule,

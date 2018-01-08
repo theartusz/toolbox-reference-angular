@@ -12,8 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    BrowserModule, SharedModule.forRoot(),
-    TranslateModule.forRoot()
+    BrowserModule
   ],
   exports: [],
   declarations: [
