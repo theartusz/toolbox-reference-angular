@@ -7,13 +7,16 @@ import {TranslateModule} from '@ngx-translate/core';
 import {RouterTestingModule} from '@angular/router/testing';
 import {GreeterComponent} from './greeter.component';
 import {ExampleService} from '../../services/example.service';
+import {Observable} from 'rxjs/Observable';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
     // Example service mock
-    const exampleServiceStub = {
-      serviceExampleFunction: true,
-    };
+    class ExampleServiceStub {
+      serviceExampleFunction(): Observable<boolean> {
+        return Observable.of(true);
+      }
+    }
 
     TestBed.configureTestingModule({
       declarations: [
@@ -24,7 +27,7 @@ describe('HomeComponent', () => {
         TranslateModule.forRoot()
       ],
       providers: [
-        [ {provide: ExampleService, useValue: exampleServiceStub } ]
+        [ {provide: ExampleService, useClass: ExampleServiceStub } ]
       ]
     }).compileComponents();
   }));
@@ -39,13 +42,7 @@ describe('HomeComponent', () => {
     const fixture = TestBed.createComponent(GreeterComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('home.greeter.header');
-    expect(compiled.querySelector('p').textContent).toContain('home.greeter.info');
-  }));
-
-  it('verify that service is working as expected', async(() => {
-    const fixture = TestBed.createComponent(GreeterComponent);
-    fixture.detectChanges();
+    expect(compiled.querySelector('h1').innerText).toContain('home.welcome');
   }));
 });
 
