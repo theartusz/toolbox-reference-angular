@@ -14,12 +14,15 @@ A pull request must comply with the following requirements:
     1.1. The following commands should be running without any erros:
     
     Build the project for production
+    
     `ng build --target=production --environment=prod`    
     
-    Run all Angular X tests.
+    Run all Unit tests.
+    
     `npm test`
     
     Run all E2E tests
+    
     `ng e2e`
     
   2. A detailed description about the pull request. For instance "why it has been fixed and how it has been fixed"?
