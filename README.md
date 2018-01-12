@@ -16,7 +16,7 @@ The following boilerplate was mainly created using Angular Cli.
 ## Content
 
 * [Installation](#installation)
-* [Contribution] (#contribution)
+* [Contribution](#contribution)
 * [Elements](#elements)
 * [External Modules](#externalModules)
 * [Testing](#Testing)

@@ -13,15 +13,15 @@ A pull request must comply with the following requirements:
   1. The Pull Rquest must be building.
     1.1. The following commands should be running without any erros:
     
-    Build the project for production
-    
+    * Build the project for production
+        
     `ng build --target=production --environment=prod`    
     
-    Run all Unit tests.
+    * Run all Unit tests.
     
     `npm test`
     
-    Run all E2E tests
+    * Run all E2E tests
     
     `ng e2e`
     
