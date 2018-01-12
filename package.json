@@ -14,6 +14,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics": "0.0.45",
     "@angular/animations": "^5.1.0",
     "@angular/common": "^5.1.0",
     "@angular/compiler": "^5.1.0",
@@ -26,8 +27,11 @@
     "@ngx-translate/core": "^9.0.1",
     "@ngx-translate/http-loader": "^2.0.0",
     "angular2-moment": "^1.7.1",
+    "bootstrap": "4.0.0-beta.2",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.9",
     "rxjs": "^5.5.5",
     "zone.js": "^0.8.18"
   },

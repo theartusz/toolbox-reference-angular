@@ -13,6 +13,7 @@ export class GreeterComponent implements OnInit {
 
   @Input() greetings: string;
   isServiceWorking: boolean;
+  showServiceStatus: boolean;
 
   constructor(private exampleService: ExampleService) {
   }
@@ -22,6 +23,10 @@ export class GreeterComponent implements OnInit {
       this.greetings = 'home.welcome';
 
     this.callService();
+  }
+
+  toggleServiceStatus(){
+    this.showServiceStatus = !this.showServiceStatus;
   }
 
   private callService() {
