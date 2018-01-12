@@ -1,4 +1,18 @@
-h1{
-  margin-top: 35px;
-  color: darkred;
+.greeter {
+  h1 {
+    margin-top: 35px;
+    color: darkred;
+  }
+
+  .btn-sm {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 250px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .service-status {
+    margin-bottom: 35px;
+  }
 }

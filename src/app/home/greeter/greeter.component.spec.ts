@@ -11,9 +11,7 @@ import {ExampleService} from '../../services/example.service';
 describe('HomeComponent', () => {
   beforeEach(async(() => {
     // Example service mock
-    const exampleServiceStub = {
-      serviceExampleFunction: true,
-    };
+
 
     TestBed.configureTestingModule({
       declarations: [
@@ -24,7 +22,7 @@ describe('HomeComponent', () => {
         TranslateModule.forRoot()
       ],
       providers: [
-        [ {provide: ExampleService, useValue: exampleServiceStub } ]
+        ExampleService
       ]
     }).compileComponents();
   }));
@@ -39,13 +37,7 @@ describe('HomeComponent', () => {
     const fixture = TestBed.createComponent(GreeterComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('home.greeter.header');
-    expect(compiled.querySelector('p').textContent).toContain('home.greeter.info');
-  }));
-
-  it('verify that service is working as expected', async(() => {
-    const fixture = TestBed.createComponent(GreeterComponent);
-    fixture.detectChanges();
+    expect(compiled.querySelector('h1').innerText).toContain('home.welcome');
   }));
 });
 

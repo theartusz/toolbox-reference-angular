@@ -10,11 +10,17 @@ describe('angular-boilerplate App', () => {
 
   it('check title and welcome text', () => {
     page.navigateTo();
-    expect(browser.getTitle()).toEqual('AngularBoilerplate');
+    expect(browser.getTitle()).toEqual('Angular Boilerplate');
   });
 
   it('check welcome text', () => {
     const el = element(by.tagName('h1'));
-    expect(el.getText()).toContain('Angular - Boilerplate');
+    expect(el.getText()).toContain('Welcome to this Angular Boilerplate');
+  });
+
+  it('navigate to new route', () => {
+    const newCaseLink = element(by.css('.navigation-link'));
+    newCaseLink.click();
+    expect(element(by.tagName('h1')).getText()).toBe('You just navigated!');
   });
 });
