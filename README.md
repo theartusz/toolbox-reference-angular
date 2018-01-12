@@ -20,7 +20,7 @@ The following boilerplate was mainly created using Angular Cli.
 * [Elements](#elements)
 * [External Modules](#externalModules)
 * [Testing](#Testing)
-* [External References](#External References)
+* [External References](#externalReferences)
 
 ## Installation
 
