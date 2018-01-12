@@ -20,6 +20,7 @@ The following boilerplate was mainly created using Angular Cli.
 * [Elements](#elements)
 * [External Modules](#externalModules)
 * [Testing](#Testing)
+* [External References](#External References)
 
 ## Installation
 
@@ -114,7 +115,7 @@ End-to-end testing and Unit Testing are both supported in this project and can b
     ng e2e // run end to end tests
     
     
-## External references
+## External References
 
 ### Hook up with backend
 
