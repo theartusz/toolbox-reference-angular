@@ -9,13 +9,18 @@ An explanation for all the components and modules used for this project can be f
 
 The project is following *John Papas Styleguide*: https://angular.io/guide/styleguide
 
+At the moment the project is using the CSS-framework Bootsrap 4.
+
 The following boilerplate was mainly created using Angular Cli.
 
 ## Content
 
 * [Installation](#installation)
+* [Contribution](#contribution)
 * [Elements](#elements)
 * [External Modules](#externalModules)
+* [Testing](#Testing)
+* [External References](#externalReferences)
 
 ## Installation
 
@@ -45,6 +50,9 @@ ng serve --aot
 
 --aot will be standard when running npm start in future Angular versions.
 
+## Contribution
+
+If you want to contribute to this project, please read the [Contribution guidelines for this project](CONTRIBUTING.md)
 
 ## Elements
 
@@ -91,3 +99,27 @@ They are all implemented and used in the project.
 ### @ngx-translate
 
 https://github.com/ngx-translate
+
+### Bootstrap 4
+
+The project is using Bootstrap 4, which is still in test phase but is considered pretty stable by the community. 
+
+https://v4-alpha.getbootstrap.com/
+
+## Testing 
+
+End-to-end testing and Unit Testing are both supported in this project and can be used as followed:
+    
+    npm test // run unit tests
+        
+    ng e2e // run end to end tests
+    
+    
+## External References
+
+### Hook up with backend
+
+The following project by @salilsaini868 is a good reference project on how to combine a donet project with an Angular 5 project.
+In the following project a swagger generation tool has been used to hook up the front end to the webapi: 
+
+[Example project](https://github.com/salilsaini868/Recruitment-System/tree/develop/web)

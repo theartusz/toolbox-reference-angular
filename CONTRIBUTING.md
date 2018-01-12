@@ -12,15 +12,12 @@ A pull request must comply with the following requirements:
 
   1. The Pull Rquest must be building.
     1.1. The following commands should be running without any erros:
-    
-    Build the project for production
-    `ng build --target=production --environment=prod`    
-    
-    Run all Angular X tests.
-    `npm test`
-    
-    Run all E2E tests
-    `ng e2e`
+            
+    ng build --target=production --environment=prod // Build for production
+        
+    npm test // Run all unit tests
+        
+    ng e2e // Run all end-to-end tets
     
   2. A detailed description about the pull request. For instance "why it has been fixed and how it has been fixed"?
   3. If any Issues are releated to the PR they should be linked 
