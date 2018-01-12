@@ -7,16 +7,11 @@ import {TranslateModule} from '@ngx-translate/core';
 import {RouterTestingModule} from '@angular/router/testing';
 import {GreeterComponent} from './greeter.component';
 import {ExampleService} from '../../services/example.service';
-import {Observable} from 'rxjs/Observable';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
     // Example service mock
-    class ExampleServiceStub {
-      serviceExampleFunction(): Observable<boolean> {
-        return Observable.of(true);
-      }
-    }
+
 
     TestBed.configureTestingModule({
       declarations: [
@@ -27,7 +22,7 @@ describe('HomeComponent', () => {
         TranslateModule.forRoot()
       ],
       providers: [
-        [ {provide: ExampleService, useClass: ExampleServiceStub } ]
+        ExampleService
       ]
     }).compileComponents();
   }));
