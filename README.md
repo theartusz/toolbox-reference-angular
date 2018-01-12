@@ -108,11 +108,17 @@ https://v4-alpha.getbootstrap.com/
 ## Testing 
 
 End-to-end testing and Unit Testing are both supported in this project and can be used as followed:
+    
+    npm test // run unit tests
+        
+    ng e2e // run end to end tests
+    
+    
+## External references
 
-    Run all Unit tests.
-    
-    `npm test`
-    
-    Run all E2E tests
-    
-    `ng e2e`
+# Hook up with backend
+
+The following project by @salilsaini868 is a good reference project on how to combine a donet project with an Angular 5 project.
+In the following project a swagger generation tool has been used to hook up the front end to the webapi: 
+
+[Example project](https://github.com/salilsaini868/Recruitment-System/tree/develop/web)
