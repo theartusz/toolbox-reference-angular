@@ -4,8 +4,17 @@ import {TranslateModule} from '@ngx-translate/core';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HomeComponent} from './home.component';
 import {GreeterComponent} from './greeter/greeter.component';
+import {ExampleService} from '../services/example.service';
+import {Observable} from 'rxjs/Observable';
 
 describe('HomeComponent', () => {
+
+  class ExampleServiceStub {
+    serviceExampleFunction(): Observable<boolean> {
+      return Observable.of(true);
+    }
+  }
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -15,6 +24,9 @@ describe('HomeComponent', () => {
       imports: [
         RouterTestingModule,
         TranslateModule.forRoot()
+      ],
+      providers: [
+        [ {provide: ExampleService, useClass: ExampleServiceStub } ]
       ]
     }).compileComponents();
   }));
