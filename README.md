@@ -116,7 +116,7 @@ End-to-end testing and Unit Testing are both supported in this project and can b
     
 ## External references
 
-# Hook up with backend
+### Hook up with backend
 
 The following project by @salilsaini868 is a good reference project on how to combine a donet project with an Angular 5 project.
 In the following project a swagger generation tool has been used to hook up the front end to the webapi: 
