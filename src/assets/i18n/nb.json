@@ -11,5 +11,12 @@
   "navigation" : {
     "welcome" : "You just navigated!",
     "back" : "Back"
+  },
+  "login" : {
+    "welcome" : "Login Screen"
+  },
+  "error_page" : {
+    "placeholder_header" : "404 - Error Page",
+    "placeholder_paragraph" : "Replace the following HTML with the desired HTML and SCSS/CSS"
   }
 }

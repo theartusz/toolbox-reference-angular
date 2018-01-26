@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import 'rxjs';
-import {ExampleService} from './example.service';
+import {ExampleService} from '../example.service';
 
 @NgModule({
   imports: [],

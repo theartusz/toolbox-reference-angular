@@ -14,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     BrowserModule,
     TranslateModule.forRoot(),
-    RouterModule, SharedModule.forRoot()
+    RouterModule,
+    SharedModule
   ],
   exports: [],
   declarations: [

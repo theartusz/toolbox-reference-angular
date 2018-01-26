@@ -6,21 +6,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AdminRouterModule } from './admin.route';
 
 // Components
-import {
-  AdminDashboardComponent,
-  SkillComponent, SkillsComponent
-} from '../index.admin';
+import {AdminDashboardComponent, SkillComponent, SkillsComponent} from '../index.admin';
 
 
 @NgModule({
   imports: [
-    BrowserModule, AdminRouterModule,
+    BrowserModule,
+    AdminRouterModule,
     TranslateModule.forRoot()
   ],
   exports: [],
   declarations: [
     AdminDashboardComponent,
-    SkillComponent, SkillsComponent
+    SkillComponent,
+    SkillsComponent
   ],
   providers: [],
 })

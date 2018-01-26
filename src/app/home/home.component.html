@@ -2,3 +2,7 @@
   <boilerplate-greeter [greetings]="'home.welcome'"></boilerplate-greeter>
   <a class="navigation-link" [routerLink]="'/navigate'" translate>home.navigate</a>
 </div>
+
+<div class="year">
+  <span>{{today.toString() | datex:'YYYY'}} @ Evry</span>
+</div>

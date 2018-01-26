@@ -1,7 +1,7 @@
 Admin folder is for various admin features of admin section
 
 # Index.shared.ts (i.e. Barrel)
-This file contains the expoxt statement of files of current folder. This is to avoid cubersome 
+This file contains the exports statement of files of current folder. This is to avoid cumbersome 
 of large number of export statements.
 
 # Admin/Shared

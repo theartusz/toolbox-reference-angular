@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'admindashboard',
-  templateUrl: 'admin.dashboard.component.html'
+  selector: 'boilerplate-admin-dashboard',
+  templateUrl: 'admin-dashboard.component.html',
+  styleUrls: ['admin-dashboard.component.scss']
 })
 
 export class AdminDashboardComponent implements OnInit {
