@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
 import { AppRouterModule } from './app.routes';
 import { LoginModule } from './Login/shared/login.module';
 import { AdminModule } from './admin/shared/admin.module';
-import { ServiceModule } from './services/services.module';
+import { ServiceModule } from './services/shared/services.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import {ErrorModule} from './error/error.module';

@@ -6,13 +6,13 @@ import {Component, HostListener, Inject, OnInit, ViewChild, AfterViewInit} from 
   styleUrls: ['home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-
+  today: Date;
 
   constructor() {
   }
 
   ngOnInit() {
-
+    this.today = new Date();
   }
 
   ngAfterViewInit() {
