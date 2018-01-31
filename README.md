@@ -70,7 +70,7 @@ When creating a new component a .ts, .html .scss and .spec should always be incl
 
 ### Services
 
-A simple ```example.service.ts``` has been included in the project to show the usage of services in Angular.
+A simple ```example.service.ts``` has been included in the project to show the usage of services and **D**ependency **I**njection (DI) in Angular.
 It only returns a Observable that returns true value. An Observable is used to display how to handle them.
 
 The service is injected in the greeter component. It should only show the greeting if the service works as expected, and 
