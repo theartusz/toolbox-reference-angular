@@ -1,18 +1,17 @@
 # Angular Toolbox & Reference Project 
 
-This project is a reference and a toolbox project for *Angular 5.1.0.* 
+![alt Angular](https://angular.io/assets/images/logos/angular/angular.png)
 
-The project could be used as a reference and toolbox for new or existing internal projects.
+This project is a reference and a toolbox project for **Angular 5.1.0.**  The project could be used as a reference and toolbox for new or existing internal projects.
+The most used modules, component and libaries has been implemented into this project. 
 
-The most used modules, component and libaries has been implemented into this project.
+The project is following *John Papas Angular Styleguide*: https://angular.io/guide/styleguide
 
-An explanation for all the components and modules used for this project can be found further down in the project. 
+The project is using the CSS-framework **Bootsrap 4**.
 
-The project is following *John Papas Styleguide*: https://angular.io/guide/styleguide
-
-At the moment the project is using the CSS-framework Bootsrap 4.
-
-The following boilerplate was mainly created using Angular Cli.
+The following boilerplate was mainly created using the **Angular CLI**. It is recommended to use the CLI when creating new projects and use this project more as a reference.
+If you decide to clone this project and make changes, it is still recommended to use the commands integrated in the CLI, to create new components, modules, services etc.
+The relevant files will then be imported, created and imported in the correct modules etc. This will help ensuring correct style and folder structure. 
 
 ## Content
 
@@ -59,27 +58,20 @@ If you want to contribute to this project, please read the [Contribution guideli
 
 ### Components
 
-In this refernce project there has been created a few components, mainly to describe the best pratice folder structure.
+In this reference project there has been created a few components, mainly to describe the best pratice folder structure.
 The folder structure is based on John Papa's style guide: https://angular.io/guide/styleguide. This is also the official
-Angular 2 styleguide. 
+Angular 2 style guide. 
 
-If we start with the priamry component, the ```app.component.html|ts|scss|spec``` we can see that it is using router outlet
-to control routing. The routes are defined in the ```app.routes.ts``` file. 
+All components in the project has the following naming convention: 
 
-The ```home.component``` is the main page of the website, defined by the ```app.rotes.ts``` file. It contains a sub component,
-```greeter.component.html|scss|ts|spec```. This components takes an input value to show the end users a kind greeting. 
-All components that is a part of the "main page" (home.component) is in the same module. 
+  `component-name.component.ts|html|scss|spec.ts.` 
 
-The next, and last component in this project is the ```navigation-destination.component.ts|html|spec|scss```. This project only
-describes a navigation route, as we can see in the ```app.routes.ts``` file. As this is a new routing destination, and not a part
-of the home.component, it has its own module. 
-
-An ```error.component.ts|html|scss|spec``` has also been provided to descibe how to handle 404 errors in Angular.
+When creating a new component a .ts, .html .scss and .spec should always be included! 
 
 ### Services
 
-A simple ```example.service.ts``` has been included in the project to show the usage of services in Angular.
-It only returns a Observable that returns true value. An Obsevable is used to display how to handle them.
+A simple ```example.service.ts``` has been included in the project to show the usage of services and **D**ependency **I**njection (DI) in Angular.
+It only returns a Observable that returns true value. An Observable is used to display how to handle them.
 
 The service is injected in the greeter component. It should only show the greeting if the service works as expected, and 
 the ```h1``` elements contains an *ngIf.
@@ -120,7 +112,7 @@ End-to-end testing and Unit Testing are both supported in this project and can b
 
 ### Hook up with backend
 
-The following project by @salilsaini868 is a good reference project on how to combine a donet project with an Angular 5 project.
+The following project by @salilsaini868 is a good reference project on how to combine a DOTNET project with an Angular 5 project.
 In the following project a swagger generation tool has been used to hook up the front end to the webapi: 
 
 [Example project](https://github.com/salilsaini868/Recruitment-System/tree/develop/web)
