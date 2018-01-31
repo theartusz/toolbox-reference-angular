@@ -9,9 +9,9 @@ The project is following *John Papas Angular Styleguide*: https://angular.io/gui
 
 The project is using the CSS-framework **Bootsrap 4**.
 
-The following boilerplate was mainly created using Angular Cli. It is suggested to use the CLI when creating a new project and use this project more as an reference.
-If you decide to clone this project and make changes, it is suggested to use the commands integrated in the cli to create new components, modules, services etc.
-The relevant files will then be imported, created and imported in the correct modules etc. 
+The following boilerplate was mainly created using the **Angular CLI**. It is recommended to use the CLI when creating new projects and use this project more as a reference.
+If you decide to clone this project and make changes, it is still recommended to use the commands integrated in the CLI, to create new components, modules, services etc.
+The relevant files will then be imported, created and imported in the correct modules etc. This will help ensuring correct style and folder structure. 
 
 ## Content
 
