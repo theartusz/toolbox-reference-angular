@@ -2,12 +2,12 @@
 
 ![alt Angular](https://angular.io/assets/images/logos/angular/angular.png)
 
-This project is a reference and a toolbox project for *Angular 5.1.0.*  The project could be used as a reference and toolbox for new or existing internal projects.
+This project is a reference and a toolbox project for **Angular 5.1.0.**  The project could be used as a reference and toolbox for new or existing internal projects.
 The most used modules, component and libaries has been implemented into this project. 
 
 The project is following *John Papas Angular Styleguide*: https://angular.io/guide/styleguide
 
-The project is using the CSS-framework Bootsrap 4.
+The project is using the CSS-framework **Bootsrap 4**.
 
 The following boilerplate was mainly created using Angular Cli. It is suggested to use the CLI when creating a new project and use this project more as an reference.
 If you decide to clone this project and make changes, it is suggested to use the commands integrated in the cli to create new components, modules, services etc.
