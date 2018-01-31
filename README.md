@@ -62,7 +62,10 @@ In this reference project there has been created a few components, mainly to des
 The folder structure is based on John Papa's style guide: https://angular.io/guide/styleguide. This is also the official
 Angular 2 style guide. 
 
-All components in the project has the following naming convention: *component-name.component.ts|html|scss|spec.ts*. 
+All components in the project has the following naming convention: 
+
+  `component-name.component.ts|html|scss|spec.ts.` 
+
 When creating a new component a .ts, .html .scss and .spec should always be included! 
 
 ### Services
