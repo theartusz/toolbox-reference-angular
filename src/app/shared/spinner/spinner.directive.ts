@@ -4,7 +4,9 @@ import {Subscription} from 'rxjs/Subscription';
 // Services
 import {SpinnerService} from './spinner.service';
 
-@Directive({selector: '[spinner]'})
+@Directive({
+  selector: '[boilerplateSpinner]'
+})
 export class SpinnerDirective implements OnInit, OnDestroy {
 
   subscription: Subscription;

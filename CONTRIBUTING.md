@@ -19,6 +19,8 @@ A pull request must comply with the following requirements:
         
     ng e2e // Run all end-to-end tets
     
+    ng lint // Run lint to avoid bad code style
+    
   2. A detailed description about the pull request. For instance "why it has been fixed and how it has been fixed"?
   3. If any Issues are releated to the PR they should be linked 
  

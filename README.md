@@ -20,6 +20,7 @@ The relevant files will then be imported, created and imported in the correct mo
 * [Elements](#elements)
 * [External Modules](#externalModules)
 * [Testing](#Testing)
+* [TSLint](#tslint)
 * [External References](#externalReferences)
 
 ## Installation
@@ -81,6 +82,7 @@ the ```h1``` elements contains an *ngIf.
 A HTTP Interceptor is created as an reference. If you ever need to log based on status, or have to handle HTTP requests/response etc.
 somehow. This is the way to go. 
 
+## TSLint 
 
 ## External Modules
 
@@ -107,6 +109,13 @@ End-to-end testing and Unit Testing are both supported in this project and can b
         
     ng e2e // run end to end tests
     
+## TSLint
+
+To ensure good syntax standard and code quality, linting has been added to the project. You can run this by using the following command:
+
+    ng lint -format stylish
+    
+Do not create a Pull Requests before running this command. This makes it easier for the reviewer to review the code.
     
 ## External References
 

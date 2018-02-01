@@ -19,13 +19,13 @@ export class GreeterComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (!this.greetings)
+    if (!this.greetings) {
       this.greetings = 'home.welcome';
-
+    }
     this.callService();
   }
 
-  toggleServiceStatus(){
+  toggleServiceStatus() {
     this.showServiceStatus = !this.showServiceStatus;
   }
 

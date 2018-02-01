@@ -6,6 +6,7 @@ import {HomeComponent} from './home.component';
 import {GreeterComponent} from './greeter/greeter.component';
 import {ExampleService} from '../services/example.service';
 import {Observable} from 'rxjs/Observable';
+import {DatexPipe} from '../shared/pipes/datex.pipe';
 
 describe('HomeComponent', () => {
 
@@ -26,6 +27,7 @@ describe('HomeComponent', () => {
         TranslateModule.forRoot()
       ],
       providers: [
+        DatexPipe,
         [ {provide: ExampleService, useClass: ExampleServiceStub } ]
       ]
     }).compileComponents();
