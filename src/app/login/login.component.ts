@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'login',
+  selector: 'boilerplate-login',
   templateUrl: 'login.component.html'
 })
 
