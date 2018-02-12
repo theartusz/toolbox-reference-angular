@@ -6,6 +6,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {ErrorComponent} from './error/error.component';
 import {NavigationDestinationComponent} from './navigation-destination/navigation-destination.component';
+import {CalenderComponent} from './google-material/calender.component';
 
 const APP_ROUTES: Routes = [
   {
@@ -20,6 +21,10 @@ const APP_ROUTES: Routes = [
     path: '**',
     component: ErrorComponent
   },
+  {
+    path: 'google-material',
+    component: CalenderComponent
+  }
 ];
 
 export let AppRouterModule = RouterModule.forRoot(APP_ROUTES, {useHash: false});
