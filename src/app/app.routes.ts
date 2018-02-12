@@ -22,7 +22,7 @@ const APP_ROUTES: Routes = [
     component: ErrorComponent
   },
   {
-    path: 'google-material',
+    path: 'material',
     component: CalenderComponent
   }
 ];
