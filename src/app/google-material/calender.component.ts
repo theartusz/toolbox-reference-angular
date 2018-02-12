@@ -1,3 +1,6 @@
+/**
+ * created by lenewhiteley on 12/02/2018.
+ */
 import {Component} from '@angular/core';
 
 

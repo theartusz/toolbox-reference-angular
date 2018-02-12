@@ -20,9 +20,7 @@ import {RouterModule} from '@angular/router';
     SharedModule,
     TranslateModule.forRoot()
   ],
-  exports: [
-    CalenderComponent
-  ],
+  exports: [],
   providers: [],
 
 })
