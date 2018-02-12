@@ -18,5 +18,13 @@
   "error_page" : {
     "placeholder_header" : "404 - Error Page",
     "placeholder_paragraph" : "Replace the following HTML with the desired HTML and SCSS/CSS"
+  },
+  "calender": {
+    "header": "This the Google Material Calender",
+    "choose_date": "Choose a date"
+  },
+  "input": {
+    "header": "This a Google Material Input field",
+    "text": "Try out the input field"
   }
 }

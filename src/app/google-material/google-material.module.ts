@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
-import {CalenderComponent} from './calender.component';
+import {GoogleMaterialComponent} from './google-material.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatDatepickerModule,
   MatFormFieldModule,
@@ -12,9 +13,10 @@ import {
   MatInputModule
 } from '@angular/material';
 
+
 @NgModule({
   declarations: [
-    CalenderComponent
+    GoogleMaterialComponent
   ],
   imports: [
     MatFormFieldModule,
@@ -27,6 +29,7 @@ import {
     MatInputModule,
     MatNativeDateModule,
 
+    BrowserAnimationsModule,
     BrowserModule,
     RouterModule,
     TranslateModule.forRoot()
@@ -36,4 +39,4 @@ import {
 
 })
 
-export class CalenderComponentModule { }
+export class GoogleMaterialModule { }
