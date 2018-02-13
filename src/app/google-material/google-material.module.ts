@@ -4,6 +4,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MAT_DATE_LOCALE} from '@angular/material/core';
 import {
   MatDatepickerModule,
   MatFormFieldModule,
@@ -34,8 +35,11 @@ import {
     RouterModule,
     TranslateModule.forRoot()
   ],
-  exports: [],
-  providers: [],
+  exports: [
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'no-NO'}  // changes the format for the calender to norwegian (en-GB, changes it to english)
+  ],
 
 })
 
