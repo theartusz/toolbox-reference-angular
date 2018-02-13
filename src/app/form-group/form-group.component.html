@@ -1,0 +1,80 @@
+<form [formGroup]="userForm" (ngSubmit)="formExample(userForm.value)" novalidate class="container-fluid user-details-view">
+
+  <div class="row">
+    <!-- personal information -->
+    <div class="col-md-6">
+      <div class="container-fluid">
+        <!-- header -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="settings-header" translate>
+              <span translate>form.header.user_details</span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- first name -->
+        <div class="row settings-content">
+          <div class="col-md-6">
+            <label class="content-header" translate>form.content.given_name</label>
+          </div>
+          <div class="col-md-6">
+            <input class="details-input" id="given-name" type="text"
+                   placeholder="{{'form.content.given_name' | translate}}" required formControlName="givenName">
+            <div
+              *ngIf="userForm.controls['givenName'].hasError('required') && userForm.controls['givenName'].touched"
+              class="error" translate>form.error.given_name_missing
+            </div>
+          </div>
+        </div>
+
+        <!-- First last name -->
+        <div class="row settings-content">
+          <div class="col-md-6">
+            <label class="content-header" translate>form.content.sur_name</label>
+          </div>
+          <div class="col-md-6">
+            <input class="details-input" type="text" placeholder="{{'form.content.sur_name' | translate}}"
+                   required formControlName="surName">
+            <div
+              *ngIf="userForm.controls['surName'].hasError('required') && userForm.controls['surName'].touched"
+              class="error" translate>form.error.sur_name_missing
+            </div>
+          </div>
+        </div>
+
+        <!-- email -->
+        <div class="row settings-content">
+          <div class="col-md-6">
+            <label class="content-header" translate>SETTINGS.PROFILE.EMAIL</label>
+          </div>
+          <div class="col-md-6">
+            <input class="details-input" type="text" placeholder="{{'SETTINGS.PROFILE.EMAIL' | translate}}"
+                   required formControlName="email">
+            <div
+              *ngIf="(userForm.controls['email'].hasError('required') || userForm.controls['email'].hasError('incorrectMailFormat')) && userForm.controls['email'].touched"
+              class="error" translate>SETTINGS.ERROR.EMAIL_MISSING
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Buttons -->
+  <!-- Save button && Abort button-->
+
+  <div class="row user-details-button">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <button  [disabled]="!userForm.valid" class="btn margin-left-standard save-button-user-details"
+              translate>form.button.save
+      </button>
+      <button type="submit" [disabled]="!userForm.valid"
+              class="btn save-button-user-details margin-left-standard" translate>form.button.edit
+      </button>
+      <button  (click)="abort()" type="reset" class="btn float-right margin-right-standard abort-button-organization" translate>form.button.cancel_delete</button>
+    </div>
+  </div>
+</form>

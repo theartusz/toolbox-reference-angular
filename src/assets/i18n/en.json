@@ -18,5 +18,23 @@
   "error_page" : {
     "placeholder_header" : "404 - Error Page",
     "placeholder_paragraph" : "Replace the following HTML with the desired HTML and SCSS/CSS"
+  },
+  "form": {
+    "header": {
+      "user_details": "Personal Details"
+    },
+    "content": {
+      "given_name": "First name",
+      "sur_name": "Surname"
+    },
+    "error": {
+      "given_name_missing": "First name is missing",
+      "sur_name_missing": "Surname is missing"
+    },
+    "button": {
+      "cancel_delete": "Cancel",
+      "edit": "Edit",
+      "save": "Save"
+    }
   }
 }

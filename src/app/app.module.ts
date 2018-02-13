@@ -22,6 +22,7 @@ import { ServiceModule } from './services/shared/services.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import {ErrorModule} from './error/error.module';
+import {FormGroupModule} from "./form-group/form-group.module";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -37,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     ErrorModule,
     FormsModule,
+    FormGroupModule,
     HomeModule,
     HttpClientModule,
     LoginModule,
