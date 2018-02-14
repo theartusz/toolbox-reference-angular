@@ -6,7 +6,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {ErrorComponent} from './error/error.component';
 import {NavigationDestinationComponent} from './navigation-destination/navigation-destination.component';
-import {FormGroupComponent} from "./form-group/form-group.component";
+import {FormGroupComponent} from './form-group/form-group.component';
 
 const APP_ROUTES: Routes = [
   {

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, FormControl, Validators, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'boilerplate-form-group',
@@ -7,24 +7,38 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['form-group.component.scss']
 })
 export class FormGroupComponent implements OnInit {
-  userForm: FormGroup;
-  surname: string;
-  givenName: string;
-  email: string;
+  exampleForm: FormGroup;
+  input_text: string;
+  first_search: string;
+  second_search: string;
+  input_tel: number;
+  input_email: string;
+  input_password: string;
+  input_domain: string;
+  input_url: string;
+  input_label: string;
 
   constructor(private fb: FormBuilder) {
-  }
-
-  ngOnInit() {
-    this.userForm = this.fb.group({
-      givenName: ['', Validators.required],
-      surName: ['', Validators.required],
-      email: ['', Validators.required],
+    this.exampleForm = this.fb.group({
+      first_search: new FormControl(),
+      second_search: new FormControl(),
+      input_text: ['', Validators.required],
+      input_tel: ['', Validators.required],
+      input_number: ['', Validators.required],
+      input_email: ['', Validators.required],
+      input_password: ['', Validators.required],
+      input_domain: ['', Validators.required],
+      input_url: ['', Validators.required],
+      input_label:  ['', Validators.required],
     }, {updateOn: 'blur' });
   }
 
-  formExample(userFormData: any) {
+  ngOnInit() {
 
+  }
+
+  SubmitData(exampleForm: NgForm) {
+    console.log(exampleForm.controls);
   }
 
 }

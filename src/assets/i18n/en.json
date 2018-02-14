@@ -23,13 +23,56 @@
     "header": {
       "user_details": "Personal Details"
     },
-    "content": {
-      "given_name": "First name",
-      "sur_name": "Surname"
+    "label": {
+      "type_search": "Type search",
+      "type_text": "Type text",
+      "type_tel": "Type tel",
+      "type_number": "Type number",
+      "type_email": "Type email",
+      "type_password": "Type password",
+      "type_domain": "Type domain",
+      "type_url": "Type url",
+      "field_label": "Field label",
+      "search": "Search",
+      "textarea": "Textarea",
+      "radiobutton": "Radio buttons",
+      "dropdown": "Dropdown / Select(car)",
+      "file": "Type file"
+    },
+    "placeholder": {
+      "search":"Search query",
+      "text": "Plain text",
+      "tel":"+45 12345678",
+      "number":"12345",
+      "email":"your@email.com",
+      "passeword":"Input min 8 characters",
+      "domain":"yourdomain.com",
+      "url":"http://yourdomain.com",
+      "second_search":"What are you looking for?",
+      "textarea":"Type in your message"
+
     },
     "error": {
-      "given_name_missing": "First name is missing",
-      "sur_name_missing": "Surname is missing"
+      "text_missing": "Text is missing",
+      "tel_missing": "Telephone number is missing",
+      "email_missing": "Email is missing",
+      "number_missing": "Number number is missing",
+      "password_missing": "Password number is missing",
+      "domain_missing": "Domain number is missing",
+      "url_missing": "Url number is missing",
+      "not_valid_password": "Password is not valid",
+    },
+    "dropdown": {
+      "example_one": "Example 1",
+      "example_two": "Example 2",
+      "example_three": "Example 3"
+    },
+    "radiobutton_checkbox.": {
+      "checkbox": "Checkbox",
+      "yes": "Yes",
+      "no": "No",
+      "maybe": "Maybe"
+
     },
     "button": {
       "cancel_delete": "Cancel",

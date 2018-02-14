@@ -1,80 +1,213 @@
-<form [formGroup]="userForm" (ngSubmit)="formExample(userForm.value)" novalidate class="container-fluid user-details-view">
+<form [formGroup]='exampleForm' (ngSubmit)="SubmitData(exampleForm)" novalidate
+      class="formexample-section">
 
   <div class="row">
-    <!-- personal information -->
     <div class="col-md-6">
-      <div class="container-fluid">
-        <!-- header -->
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="settings-header" translate>
-              <span translate>form.header.user_details</span>
-            </h2>
-          </div>
-        </div>
-
-        <!-- first name -->
-        <div class="row settings-content">
-          <div class="col-md-6">
-            <label class="content-header" translate>form.content.given_name</label>
-          </div>
-          <div class="col-md-6">
-            <input class="details-input" id="given-name" type="text"
-                   placeholder="{{'form.content.given_name' | translate}}" required formControlName="givenName">
-            <div
-              *ngIf="userForm.controls['givenName'].hasError('required') && userForm.controls['givenName'].touched"
-              class="error" translate>form.error.given_name_missing
-            </div>
-          </div>
-        </div>
-
-        <!-- First last name -->
-        <div class="row settings-content">
-          <div class="col-md-6">
-            <label class="content-header" translate>form.content.sur_name</label>
-          </div>
-          <div class="col-md-6">
-            <input class="details-input" type="text" placeholder="{{'form.content.sur_name' | translate}}"
-                   required formControlName="surName">
-            <div
-              *ngIf="userForm.controls['surName'].hasError('required') && userForm.controls['surName'].touched"
-              class="error" translate>form.error.sur_name_missing
-            </div>
-          </div>
-        </div>
-
-        <!-- email -->
-        <div class="row settings-content">
-          <div class="col-md-6">
-            <label class="content-header" translate>SETTINGS.PROFILE.EMAIL</label>
-          </div>
-          <div class="col-md-6">
-            <input class="details-input" type="text" placeholder="{{'SETTINGS.PROFILE.EMAIL' | translate}}"
-                   required formControlName="email">
-            <div
-              *ngIf="(userForm.controls['email'].hasError('required') || userForm.controls['email'].hasError('incorrectMailFormat')) && userForm.controls['email'].touched"
-              class="error" translate>SETTINGS.ERROR.EMAIL_MISSING
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-12 header-content">
+          <h2 class="form-header" translate>
+            <span translate>form.header.user_details</span>
+          </h2>
         </div>
       </div>
-    </div>
-  </div>
+
+      <div class="first-section col-md-6">
+        <!-- Type search -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.search</label>
+          <input class="details-input form-control"
+                 type="search"
+                 placeholder="{{'form.placeholder.search' | translate}}"
+                 formControlName="first_search"
+                 name="first_search">
+        </div>
+
+        <!-- Type text -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_text</label>
+          <input class="details-input form-control"
+                 type="text"
+                 placeholder="{{'form.placeholder.text' | translate}}"
+                 formControlName="input_text"
+                 name="input_text"
+                 required>
+          <!-- <div
+            *ngIf="exampleForm.controls['input_text'].hasError('required') && exampleForm.controls['input_text'].touched"
+            class="error" translate>form.error.text_missing
+          </div> -->
+        </div>
+
+        <!-- Type tel -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_tel</label>
+          <input class="details-input form-control"
+                 type="text"
+                 placeholder="{{'form.placeholder.tel' | translate}}"
+                 formControlName="input_tel"
+                 name="input_tel"
+                 required>
+          <!-- <div
+             *ngIf="exampleForm.controls['input_tel'].hasError('required') && exampleForm.controls['input_tel'].touched"
+             class="error" translate>form.error.tel_missing
+           </div> -->
+        </div>
+
+        <!-- Type number -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_number</label>
+          <input class="details-input form-control"
+                 type="number"
+                 placeholder="{{'form.placeholder.number' | translate}}"
+                 formControlName="input_number"
+                 name="input_number"
+                 required>
+          <!--  <div
+             *ngIf="exampleForm.controls['input_number'].hasError('required') && exampleForm.controls['input_number'].touched"
+             class="error" translate>form.error.number_missing
+           </div> -->
+        </div>
+
+        <!-- Type email -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_email</label>
+          <input class="details-input form-control"
+                 type="email"
+                 placeholder="{{'form.placeholder.email' | translate}}"
+                 formControlName="input_email"
+                 name="input_email"
+                 required>
+          <!-- <div
+            *ngIf="(exampleForm.controls['input_email'].hasError('required') || exampleForm.controls['input_email'].hasError('incorrectMailFormat')) && exampleForm.controls['email'].touched"
+            class="error" translate>form.error.email_missing
+          </div> -->
+        </div>
+
+        <!-- Type password -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_password</label>
+          <input class="details-input form-control"
+                 placeholder="{{'form.placeholder.password' | translate}}"
+                 type="password"
+                 formControlName="input_password"
+                 name="input_password"
+                 required>
+          <!-- <div
+             *ngIf="userForm.controls['input_password'].hasError('required') && userForm.controls['input_password'].touched"
+             class="error" translate>form.error.password_missing
+           </div>
+           <div
+             *ngIf="exampleForm.controls['input_password'].hasError('invalidPasswordFormat') && exampleForm.controls['input_password'].touched"
+             class="error" translate>form.error.not_valid_password
+           </div> -->
+        </div>
+
+        <!-- Type domain -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_domain</label>
+          <input class="details-input form-control"
+                 type="text"
+                 placeholder="{{'form.placeholder.domain' | translate}}"
+                 formControlName="input_domain"
+                 name="input_domain"
+                 required>
+          <!-- <div
+            *ngIf="exampleForm.controls['input_domain'].hasError('required') && exampleForm.controls['input_domain'].touched"
+            class="error" translate>form.error.domain_missing
+          </div> -->
+        </div>
+
+        <!-- Type url -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.type_url</label>
+          <input class="details-input form-control"
+                 type="url"
+                 placeholder="{{'form.placeholder.url' | translate}}"
+                 formControlName="input_url"
+                 name="input_url"
+                 required>
+          <!--<div
+            *ngIf="exampleForm.controls['input_url'].hasError('required') && exampleForm.controls['input_url'].touched"
+            class="error" translate>form.error.url_missing
+          </div> -->
+        </div>
 
 
-  <!-- Buttons -->
-  <!-- Save button && Abort button-->
+        <!-- Field label -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.field_label</label>
+          <input class="details-input form-control"
+                 type="text"
+                 formControlName="input_label"
+                 name="input_label"
+                 required>
+          <!-- <div
+            *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
+            class="error" translate>form.error.label_missing
+          </div> -->
+        </div>
+      </div>
 
-  <div class="row user-details-button">
-    <div class="col-md-6"></div>
-    <div class="col-md-6">
-      <button  [disabled]="!userForm.valid" class="btn margin-left-standard save-button-user-details"
-              translate>form.button.save
-      </button>
-      <button type="submit" [disabled]="!userForm.valid"
-              class="btn save-button-user-details margin-left-standard" translate>form.button.edit
-      </button>
-      <button  (click)="abort()" type="reset" class="btn float-right margin-right-standard abort-button-organization" translate>form.button.cancel_delete</button>
+      <div class="second-section col-md-6">
+        <!-- Search -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.search</label>
+          <input class="details-input form-control"
+                 id="second_search"
+                 type="search"
+                 placeholder="{{'form.placeholder.second_search' | translate}}"
+                 formControlName="second_search"
+                 name="second_search">
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="content-header" translate>form.label.textarea</label>
+          <div class="col-md-12 textarea">
+            <textarea translate>form.placeholder.textarea</textarea>
+          </div>
+
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-group">
+          <input type="checkbox" name="checkbox1" value="checkbox1" translate> form.radiobutton_checkbox.checkbox<br>
+          <input type="checkbox" name="checkbox2" value="checkbox2" translate> form.radiobutton_checkbox.checkbox
+        </div>
+
+        <!-- Radio buttons -->
+        <div class="form-group">
+          <label class="col-md-12 content-header" translate>form.label.radiobutton</label>
+          <input type="radio" name="example" value="yes" checked translate> form.radiobutton_checkbox.yes<br>
+          <input type="radio" name="example" value="no" translate> form.radiobutton_checkbox.no<br>
+          <input type="radio" name="example" value="maybe" translate> form.radiobutton_checkbox.maybe
+        </div>
+
+        <!-- Dropdown -->
+        <div class="form-group">
+          <div class="col-md-6">
+            <label class="content-header" translate>form.label.dropdown</label>
+          </div>
+          <div class="col-md-6">
+            <select name="dropdownExample">
+              <option translate>form.dropdown.example_one</option>
+              <option translate>form.dropdown.example_two</option>
+              <option translate>form.dropdown.example_three</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Type file -->
+
+
+        <div class="col-md-6">
+          <button [disabled]="!exampleForm.valid" value="Post data" type="Submit" class="btn btn-save"
+                  id="register"
+                  translate>
+            form.button.save
+          </button>
+        </div>
+
+      </div>
     </div>
   </div>
 </form>
