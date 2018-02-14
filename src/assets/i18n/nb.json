@@ -10,7 +10,8 @@
   },
   "navigation" : {
     "welcome" : "You just navigated!",
-    "back" : "Back"
+    "back" : "Back",
+    "material": "Google Material Calender"
   },
   "login" : {
     "welcome" : "Login Screen"

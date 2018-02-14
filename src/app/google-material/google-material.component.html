@@ -1,34 +1,36 @@
 <div class="wrapper col-md-12">
   <h1 translate>material.header</h1>
 
-<div class="container col-md-4">
-  <div class="calender-description col-md-5">
-    <h3 translate>material.calender.header</h3>
-    <div class="calender-container">
-      <mat-form-field>
-        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="{{'material.calender.choose_date' | translate}}"
-               (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi="true" #picker></mat-datepicker>
-      </mat-form-field>
+  <div class="container col-md-4">
+    <div class="calender-description col-md-5">
+      <h3 translate>material.calender.header</h3>
+      <div class="calender-container">
+        <mat-form-field>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker"
+                 placeholder="{{'material.calender.choose_date' | translate}}"
+                 (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi="true" #picker></mat-datepicker>
+        </mat-form-field>
 
-      <div class="example-events">
-        <div *ngFor="let e of events">{{e}}</div>
+        <div class="example-events">
+          <div *ngFor="let e of events">{{e}}</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="input-container col-md-5">
-    <h3 translate>material.input.header</h3>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="{{'material.input.text' | translate}}" value="">
-      </mat-form-field>
-    </form>
+    <div class="input-container col-md-5">
+      <h3 translate>material.input.header</h3>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="{{'material.input.text' | translate}}" value="">
+        </mat-form-field>
+      </form>
+    </div>
   </div>
+  <a [routerLink]="'/'" translate>navigation.back</a>
 </div>
 
 
-</div>
 
 
