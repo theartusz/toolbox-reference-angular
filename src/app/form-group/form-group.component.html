@@ -153,13 +153,17 @@
       <div class="second-section col-md-6">
         <!-- Search -->
         <div class="form-group">
-          <label class="content-header" translate>form.label.search</label>
-          <input class="details-input form-control"
-                 id="second_search"
-                 type="search"
-                 placeholder="{{'form.placeholder.second_search' | translate}}"
-                 formControlName="second_search"
-                 name="second_search">
+          <label class="content-header col-md-12" translate>form.label.search</label>
+          <div class="col-md-12 search-container">
+            <input class="details-input form-control"
+                   id="second_search"
+                   type="search"
+                   placeholder="{{'form.placeholder.second_search' | translate}}"
+                   formControlName="second_search"
+                   name="second_search">
+            <button type="submit" class="btn button-search" translate> <i class="material-icons">&#xE8B6;</i> form.options.search </button>
+          </div>
+
         </div>
 
         <!-- Textarea -->

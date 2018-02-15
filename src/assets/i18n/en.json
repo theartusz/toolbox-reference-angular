@@ -22,7 +22,7 @@
   },
   "form": {
     "header": {
-      "form_example": "Form Example with validation"
+      "form_example": "Form example with validation"
     },
     "label": {
       "type_search": "Type search",
@@ -77,7 +77,8 @@
       "no": "No",
       "maybe": "Maybe",
       "upload_file": "Upload file",
-      "field_label": "kr."
+      "field_label": "kr.",
+      "search": "Search"
     },
     "button": {
       "example": "Button"
