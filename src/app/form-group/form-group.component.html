@@ -6,8 +6,9 @@
       <div class="row">
         <div class="col-md-12 header-content">
           <h2 class="form-header" translate>
-            <span translate>form.header.user_details</span>
+            <span translate>form.header.form_example</span>
           </h2>
+          <a class="navigate-back" [routerLink]="'/'" translate>navigation.back</a>
         </div>
       </div>
 
@@ -140,6 +141,7 @@
                  formControlName="input_label"
                  name="input_label"
                  required>
+          <span class="field_label">kr</span>
           <!-- <div
             *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
             class="error" translate>form.error.label_missing
@@ -160,41 +162,31 @@
         </div>
 
         <!-- Textarea -->
-        <div class="form-group">
-          <label class="content-header" translate>form.label.textarea</label>
-          <div class="col-md-12 textarea">
-            <textarea translate>form.placeholder.textarea</textarea>
-          </div>
-
+        <label class="content-header" translate>form.label.textarea</label>
+        <div class="col-md-12 textarea">
+          <textarea placeholder="{{'form.placeholder.textarea' | translate}}"></textarea>
         </div>
 
         <!-- Checkbox -->
-        <div class="form-group">
-          <input type="checkbox" name="checkbox1" value="checkbox1" translate> form.radiobutton_checkbox.checkbox<br>
-          <input type="checkbox" name="checkbox2" value="checkbox2" translate> form.radiobutton_checkbox.checkbox
-        </div>
+        <input type="checkbox" name="checkbox1" value="checkbox1" checked> <label
+        translate>form.options.checkbox</label><br>
+        <input type="checkbox" name="checkbox2" value="checkbox2"> <label translate>form.options.checkbox</label>
 
         <!-- Radio buttons -->
-        <div class="form-group">
-          <label class="col-md-12 content-header" translate>form.label.radiobutton</label>
-          <input type="radio" name="example" value="yes" checked translate> form.radiobutton_checkbox.yes<br>
-          <input type="radio" name="example" value="no" translate> form.radiobutton_checkbox.no<br>
-          <input type="radio" name="example" value="maybe" translate> form.radiobutton_checkbox.maybe
-        </div>
+        <label class="col-md-12 content-header" translate>form.label.radiobutton</label>
+        <input type="radio" name="example" value="yes" checked> <label translate>form.options.yes</label> <br>
+        <input type="radio" name="example" value="no"> <label translate>form.options.no</label> <br>
+        <input type="radio" name="example" value="maybe"> <label translate>form.options.maybe</label>
 
         <!-- Dropdown -->
-        <div class="form-group">
-          <div class="col-md-6">
-            <label class="content-header" translate>form.label.dropdown</label>
-          </div>
-          <div class="col-md-6">
-            <select name="dropdownExample">
-              <option translate>form.dropdown.example_one</option>
-              <option translate>form.dropdown.example_two</option>
-              <option translate>form.dropdown.example_three</option>
-            </select>
-          </div>
+        <div class="col-md-12">
+          <label class="content-header" translate>form.label.dropdown</label>
         </div>
+        <select id="dropdown" class="form-control" [(ngModel)]="dropdownModel" [ngModelOptions]="{standalone: true}"> //standalone true as is not included in the form
+          <option *ngIf="!dropdownModel" [ngValue]="''" disabled translate>form.dropdown.choose</option>
+          <option *ngFor="let example of dropdownExample" [ngValue]="example" translate>{{example}}
+          </option>
+        </select>
 
         <!-- Type file -->
 

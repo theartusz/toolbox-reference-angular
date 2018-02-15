@@ -9,6 +9,10 @@
     }
   }
 
+  .content-header {
+    padding-left: 0;
+  }
+
   .first-section {
     float: left;
   }
@@ -23,6 +27,8 @@
     background: white;
     color: lightblue;
     border-radius: 0;
+    width: 150px;
+    height: 50px;
   }
 
   .textarea {
@@ -32,4 +38,13 @@
       height: 100px;
     }
   }
+  .field_label {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 20vw;
+  }
+}
+
+.navigate-back {
+  float: right;
 }

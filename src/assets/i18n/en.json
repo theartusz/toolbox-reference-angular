@@ -1,27 +1,28 @@
 {
-  "home" : {
-    "welcome" : "Welcome to this Angular Boilerplate",
-    "navigate" : "Navigate",
+  "home": {
+    "welcome": "Welcome to this Angular Boilerplate",
+    "navigate": "Navigate",
     "service_button": "Is service working?",
-    "greeter" : {
+    "greeter": {
       "header": "Angular - Boilerplate",
       "info": "Have a look at the ReadMe file for more information on how to setup your own project!"
     }
   },
-  "navigation" : {
-    "welcome" : "You just navigated!",
-    "back" : "Back"
+  "navigation": {
+    "welcome": "You just navigated!",
+    "back": "Back",
+    "form": "Form with validation"
   },
-  "login" : {
-    "welcome" : "Login Screen"
+  "login": {
+    "welcome": "Login Screen"
   },
-  "error_page" : {
-    "placeholder_header" : "404 - Error Page",
-    "placeholder_paragraph" : "Replace the following HTML with the desired HTML and SCSS/CSS"
+  "error_page": {
+    "placeholder_header": "404 - Error Page",
+    "placeholder_paragraph": "Replace the following HTML with the desired HTML and SCSS/CSS"
   },
   "form": {
     "header": {
-      "user_details": "Personal Details"
+      "form_example": "Form Example with validation"
     },
     "label": {
       "type_search": "Type search",
@@ -36,21 +37,20 @@
       "search": "Search",
       "textarea": "Textarea",
       "radiobutton": "Radio buttons",
-      "dropdown": "Dropdown / Select(car)",
+      "dropdown": "Dropdown",
       "file": "Type file"
     },
     "placeholder": {
-      "search":"Search query",
+      "search": "Search query",
       "text": "Plain text",
-      "tel":"+45 12345678",
-      "number":"12345",
-      "email":"your@email.com",
-      "passeword":"Input min 8 characters",
-      "domain":"yourdomain.com",
-      "url":"http://yourdomain.com",
-      "second_search":"What are you looking for?",
-      "textarea":"Type in your message"
-
+      "tel": "+45 12345678",
+      "number": "12345",
+      "email": "your@email.com",
+      "passeword": "Input min 8 characters",
+      "domain": "yourdomain.com",
+      "url": "http://yourdomain.com",
+      "second_search": "What are you looking for?",
+      "textarea": "Type in your message"
     },
     "error": {
       "text_missing": "Text is missing",
@@ -60,19 +60,20 @@
       "password_missing": "Password number is missing",
       "domain_missing": "Domain number is missing",
       "url_missing": "Url number is missing",
-      "not_valid_password": "Password is not valid",
+      "not_valid_password": "Password is not valid"
     },
     "dropdown": {
-      "example_one": "Example 1",
-      "example_two": "Example 2",
-      "example_three": "Example 3"
+      "example": "Example",
+      "choose": "Vennligst velg...",
+      "exampleOne": "Example 1",
+      "exampleTwo": "Example 2",
+      "exampleThree": "Example 3"
     },
-    "radiobutton_checkbox.": {
+    "options": {
       "checkbox": "Checkbox",
       "yes": "Yes",
       "no": "No",
       "maybe": "Maybe"
-
     },
     "button": {
       "cancel_delete": "Cancel",

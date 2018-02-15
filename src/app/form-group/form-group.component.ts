@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators, NgForm} from '@angular/forms';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'boilerplate-form-group',
@@ -17,8 +18,10 @@ export class FormGroupComponent implements OnInit {
   input_domain: string;
   input_url: string;
   input_label: string;
+  dropdownModel: string;
+  dropdownExample: any[];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public translate: TranslateService) {
     this.exampleForm = this.fb.group({
       first_search: new FormControl(),
       second_search: new FormControl(),
@@ -29,8 +32,14 @@ export class FormGroupComponent implements OnInit {
       input_password: ['', Validators.required],
       input_domain: ['', Validators.required],
       input_url: ['', Validators.required],
-      input_label:  ['', Validators.required],
+      input_label:  ['', Validators.required]
     }, {updateOn: 'blur' });
+
+    this.dropdownExample = [
+      this.translate.instant('form.dropdown.exampleOne'),
+      this.translate.instant('form.dropdown.exampleTwo'),
+      this.translate.instant('form.dropdown.exampleThree')
+    ];
   }
 
   ngOnInit() {
