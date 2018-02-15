@@ -37,6 +37,7 @@
       "search": "Search",
       "textarea": "Textarea",
       "radiobutton": "Radio buttons",
+      "checkbox": "Checkboxes",
       "dropdown": "Dropdown",
       "file": "Type file"
     },
@@ -46,11 +47,12 @@
       "tel": "+45 12345678",
       "number": "12345",
       "email": "your@email.com",
-      "passeword": "Input min 8 characters",
+      "password": "Input min 8 characters",
       "domain": "yourdomain.com",
       "url": "http://yourdomain.com",
       "second_search": "What are you looking for?",
-      "textarea": "Type in your message"
+      "textarea": "Type in your message",
+      "field_label": "1.050"
     },
     "error": {
       "text_missing": "Text is missing",
@@ -73,12 +75,12 @@
       "checkbox": "Checkbox",
       "yes": "Yes",
       "no": "No",
-      "maybe": "Maybe"
+      "maybe": "Maybe",
+      "upload_file": "Upload file",
+      "field_label": "kr."
     },
     "button": {
-      "cancel_delete": "Cancel",
-      "edit": "Edit",
-      "save": "Save"
+      "example": "Button"
     }
   }
 }

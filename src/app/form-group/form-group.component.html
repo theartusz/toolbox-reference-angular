@@ -137,11 +137,12 @@
         <div class="form-group">
           <label class="content-header" translate>form.label.field_label</label>
           <input class="details-input form-control"
-                 type="text"
+                 type="number"
                  formControlName="input_label"
                  name="input_label"
+                 placeholder="{{'form.placeholder.field_label' | translate}}"
                  required>
-          <span class="field_label">kr</span>
+          <span class="field_label" translate>form.options.field_label</span>
           <!-- <div
             *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
             class="error" translate>form.error.label_missing
@@ -168,34 +169,46 @@
         </div>
 
         <!-- Checkbox -->
-        <input type="checkbox" name="checkbox1" value="checkbox1" checked> <label
-        translate>form.options.checkbox</label><br>
-        <input type="checkbox" name="checkbox2" value="checkbox2"> <label translate>form.options.checkbox</label>
+        <div class="checkbox">
+          <label class="col-md-12 content-header" translate>form.label.checkbox</label>
+          <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" checked>
+            <label for="checkbox1" translate>form.options.checkbox</label><br>
+          <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2">
+            <label for="checkbox2" translate>form.options.checkbox</label>
+        </div>
 
         <!-- Radio buttons -->
-        <label class="col-md-12 content-header" translate>form.label.radiobutton</label>
-        <input type="radio" name="example" value="yes" checked> <label translate>form.options.yes</label> <br>
-        <input type="radio" name="example" value="no"> <label translate>form.options.no</label> <br>
-        <input type="radio" name="example" value="maybe"> <label translate>form.options.maybe</label>
+        <div class="radio-buttons">
+          <label class="col-md-12 content-header" translate>form.label.radiobutton</label>
+          <input type="radio" id="radio_yes" name="example" value="yes" checked> <label for="radio_yes" translate>form.options.yes</label> <br>
+          <input type="radio" id="radio_no" name="example" value="no"> <label for="radio_no" translate>form.options.no</label> <br>
+          <input type="radio" id="radio_maybe" name="example" value="maybe"> <label for="radio_maybe" translate>form.options.maybe</label>
+        </div>
 
         <!-- Dropdown -->
-        <div class="col-md-12">
-          <label class="content-header" translate>form.label.dropdown</label>
+        <div class="dropdown">
+          <label class="content-header col-md-12" translate>form.label.dropdown</label>
+          <select id="dropdown" class="form-control" [(ngModel)]="dropdownModel" [ngModelOptions]="{standalone: true}">
+            //standalone true as is not included in the form
+            <option *ngIf="!dropdownModel" [ngValue]="''" disabled translate>form.dropdown.choose</option>
+            <option *ngFor="let example of dropdownExample" [ngValue]="example" translate>{{example}}
+            </option>
+          </select>
         </div>
-        <select id="dropdown" class="form-control" [(ngModel)]="dropdownModel" [ngModelOptions]="{standalone: true}"> //standalone true as is not included in the form
-          <option *ngIf="!dropdownModel" [ngValue]="''" disabled translate>form.dropdown.choose</option>
-          <option *ngFor="let example of dropdownExample" [ngValue]="example" translate>{{example}}
-          </option>
-        </select>
 
         <!-- Type file -->
+        <div class="type-file">
+          <label class="content-header col-md-12" translate>form.label.file</label>
+          <form class="upload-form" action="/action_page.php">
+            <label for="file-upload" class="file-upload-label" translate>form.options.upload_file</label>
+            <input type="file" id="file-upload" name="pic" accept="image/*">
+          </form>
+        </div>
 
-
-        <div class="col-md-6">
-          <button [disabled]="!exampleForm.valid" value="Post data" type="Submit" class="btn btn-save"
-                  id="register"
-                  translate>
-            form.button.save
+        <!-- Example button -->
+        <div class="example-button col-md-6">
+          <button value="Post data" type="button" class="btn btn-default" translate>
+            form.button.example
           </button>
         </div>
 
