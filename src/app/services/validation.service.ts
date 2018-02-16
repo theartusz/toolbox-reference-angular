@@ -109,7 +109,8 @@ export class ValidatorService {
         if (personalNumber.toString().length !== 11) {
           return {'invalidAccountNumber': true};
         }
-        if (parseInt(personalNumber.charAt(personalNumber.length - 1), 10) === ValidatorService.mod11OfNumberWithControlDigit(personalNumber)) {
+        if (parseInt(personalNumber.charAt(personalNumber.length - 1), 10) ===
+          ValidatorService.mod11OfNumberWithControlDigit(personalNumber)) {
           return null;
         } else {
           return {'invalidAccountNumber': true};
