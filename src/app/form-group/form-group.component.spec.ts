@@ -86,10 +86,10 @@ describe('FormGroupComponent', () => {
     const fixture = TestBed.createComponent(FormGroupComponent);
     const formGroupComponent = fixture.debugElement.componentInstance;
     formGroupComponent.ngOnInit();
-    formGroupComponent.exampleForm.controls['search'].setValue('Test');
+    formGroupComponent.exampleForm.controls['first_search'].setValue('Test');
     formGroupComponent.exampleForm.controls['text'].setValue('Testeren');
     formGroupComponent.exampleForm.controls['tel'].setValue('47474747');
-    formGroupComponent.exampleForm.controls['person_number'].setValue('00000000000');
+    formGroupComponent.exampleForm.controls['personal_number'].setValue('00000000000');
     formGroupComponent.exampleForm.controls['email'].setValue('valid@email.com');
     formGroupComponent.exampleForm.controls['password'].setValue('BraPassord123');
     formGroupComponent.exampleForm.controls['repeatPassword'].setValue('BraPassord123');
