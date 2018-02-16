@@ -1,0 +1,43 @@
+.wrapper {
+  text-align: center;
+  margin-top: 20px;
+  .container {
+    padding-top: 40px;
+    text-align: left;
+    height: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    h1 {
+      text-align: center;
+    }
+    .calender-description {
+      padding: 20px;
+      margin-top: 20px;
+      float: left;
+    }
+    .input-container {
+      padding: 20px;
+      margin-top: 20px;
+      float: right;
+    }
+
+    .example-form {
+      min-width: 150px;
+      max-width: 250px;
+      width: 100%;
+    }
+
+    .example-full-width {
+      width: 100%;
+    }
+
+    .example-events {
+      width: 400px;
+      height: 200px;
+      border: 1px solid #555;
+      overflow: auto;
+    }
+  }
+
+}

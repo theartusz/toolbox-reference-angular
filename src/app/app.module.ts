@@ -23,6 +23,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import {ErrorModule} from './error/error.module';
 import {FormGroupModule} from './form-group/form-group.module';
+import { GoogleMaterialModule } from './google-material/google-material.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavigationDestinationModule,
     ServiceModule,
     SharedModule,
+    GoogleMaterialModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
