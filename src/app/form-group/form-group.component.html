@@ -1,5 +1,5 @@
 <form [formGroup]='exampleForm' (ngSubmit)="SubmitData(exampleForm.value)" novalidate
-      class="formexample-section">
+      class="formExample-section">
 
   <div class="row">
     <div class="col-md-6">
@@ -21,6 +21,10 @@
                  placeholder="{{'form.placeholder.search' | translate}}"
                  formControlName="first_search"
                  name="first_search">
+
+          <div *ngIf="exampleForm.controls['first_search'].hasError('required') && exampleForm.controls['first_search'].touched"
+               class="error" translate>form.error.search_missing
+          </div>
         </div>
 
         <!-- Type text -->
@@ -32,9 +36,11 @@
                  formControlName="input_text"
                  name="input_text"
                  required>
+
           <div *ngIf="exampleForm.controls['input_text'].hasError('required') && exampleForm.controls['input_text'].touched"
             class="error" translate>form.error.text_missing
           </div>
+
         </div>
 
         <!-- Type tel -->
@@ -46,9 +52,14 @@
                  formControlName="input_tel"
                  name="input_tel"
                  required>
-          <div *ngIf="(exampleForm.controls['input_tel'].hasError('required') || exampleForm.controls['input_email'].hasError('isValidPhoneFormBuilder')) && exampleForm.controls['input_tel'].touched"
+
+          <div *ngIf="exampleForm.controls['input_tel'].hasError('required') && exampleForm.controls['input_tel'].touched"
              class="error" translate>form.error.tel_missing
            </div>
+          <div *ngIf="exampleForm.controls['input_tel'].hasError('isValidPhoneFormBuilder') && exampleForm.controls['input_tel'].touched"
+               class="error" translate>form.error.not_valid_tel
+          </div>
+
         </div>
 
         <!-- Type number -->
@@ -60,9 +71,11 @@
                  formControlName="input_number"
                  name="input_number"
                  required>
+
           <div *ngIf="exampleForm.controls['input_number'].hasError('required') && exampleForm.controls['input_number'].touched"
              class="error" translate>form.error.number_missing
            </div>
+
         </div>
 
         <!-- Type email -->
@@ -74,9 +87,14 @@
                  formControlName="input_email"
                  name="input_email"
                  required>
-          <div *ngIf="(exampleForm.controls['input_email'].hasError('required') || exampleForm.controls['input_email'].hasError('incorrectMailFormat')) && exampleForm.controls['email'].touched"
+
+          <div *ngIf="exampleForm.controls['input_email'].hasError('required') && exampleForm.controls['input_email'].touched"
             class="error" translate>form.error.email_missing
           </div>
+          <div *ngIf="exampleForm.controls['input_email'].hasError('incorrectMailFormat') && exampleForm.controls['input_email'].touched"
+               class="error" translate>form.error.not_valid_email
+          </div>
+
         </div>
 
         <!-- Type password -->
@@ -88,13 +106,15 @@
                  formControlName="input_password"
                  name="input_password"
                  required>
-          <div *ngIf="userForm.controls['input_password'].hasError('required') && userForm.controls['input_password'].touched"
+
+          <div *ngIf="exampleForm.controls['input_password'].hasError('required') && exampleForm.controls['input_password'].touched"
              class="error" translate>form.error.password_missing
            </div>
            <div
              *ngIf="exampleForm.controls['input_password'].hasError('invalidPasswordFormat') && exampleForm.controls['input_password'].touched"
              class="error" translate>form.error.not_valid_password
            </div>
+
         </div>
 
         <!-- Type domain -->
@@ -106,9 +126,11 @@
                  formControlName="input_domain"
                  name="input_domain"
                  required>
+
           <div *ngIf="exampleForm.controls['input_domain'].hasError('required') && exampleForm.controls['input_domain'].touched"
             class="error" translate>form.error.domain_missing
           </div>
+
         </div>
 
         <!-- Type url -->
@@ -120,9 +142,11 @@
                  formControlName="input_url"
                  name="input_url"
                  required>
+
           <div *ngIf="exampleForm.controls['input_url'].hasError('required') && exampleForm.controls['input_url'].touched"
             class="error" translate>form.error.url_missing
           </div>
+
         </div>
 
 
@@ -136,9 +160,11 @@
                  placeholder="{{'form.placeholder.field_label' | translate}}"
                  required>
           <span class="field_label" translate>form.options.field_label</span>
+
           <div *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
-            class="error" translate>form.error.label_missing
+            class="error" translate>form.error.number_missing
           </div>
+
         </div>
       </div>
 
@@ -151,7 +177,6 @@
                    id="second_search"
                    type="search"
                    placeholder="{{'form.placeholder.second_search' | translate}}"
-                   formControlName="second_search"
                    name="second_search">
             <button type="submit" class="btn button-search" translate> <i class="material-icons">&#xE8B6;</i> form.options.search </button>
           </div>

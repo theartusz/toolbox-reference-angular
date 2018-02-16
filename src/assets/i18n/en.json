@@ -47,7 +47,7 @@
       "tel": "+45 12345678",
       "number": "12345",
       "email": "your@email.com",
-      "password": "Input min 8 characters",
+      "password": "Min 8 characters and 1 large letter",
       "domain": "yourdomain.com",
       "url": "http://yourdomain.com",
       "second_search": "What are you looking for?",
@@ -55,14 +55,17 @@
       "field_label": "1.050"
     },
     "error": {
+      "search_missing": "Search text is missing",
       "text_missing": "Text is missing",
       "tel_missing": "Telephone number is missing",
       "email_missing": "Email is missing",
-      "number_missing": "Number number is missing",
-      "password_missing": "Password number is missing",
-      "domain_missing": "Domain number is missing",
-      "url_missing": "Url number is missing",
-      "not_valid_password": "Password is not valid"
+      "number_missing": "Number is missing",
+      "password_missing": "Password is missing",
+      "domain_missing": "Domain  is missing",
+      "url_missing": "Url is missing",
+      "not_valid_password": "Password is not valid",
+      "not_valid_email": "Email is not valid",
+      "not_valid_tel": "Phone number is not valid"
     },
     "dropdown": {
       "example": "Example",

@@ -12,7 +12,6 @@ export class FormGroupComponent implements OnInit {
   exampleForm: FormGroup;
   input_text: string;
   first_search: string;
-  second_search: string;
   input_tel: number;
   input_number: number;
   input_email: string;
@@ -25,8 +24,7 @@ export class FormGroupComponent implements OnInit {
 
   constructor(private fb: FormBuilder, public translate: TranslateService, public validationService: ValidatorService) {
     this.exampleForm = this.fb.group({
-      first_search: new FormControl(),
-      second_search: new FormControl(),
+      first_search: ['', Validators.required],
       input_text: ['', Validators.required],
       input_tel: ['', Validators.compose([Validators.required, this.validationService.isValidPhoneFormBuilder])],
       input_number: ['', Validators.required],
