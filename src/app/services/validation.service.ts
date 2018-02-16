@@ -1,0 +1,88 @@
+import {Injectable} from '@angular/core';
+import {FormControl} from '@angular/forms';
+
+/**
+ *
+ * Service for handeling custom validation.
+ *
+ * @author Ørjan Ertkjern
+ *
+ */
+@Injectable()
+export class ValidatorService {
+
+  constructor() {
+  }
+
+  /**
+   * Validate if from control has a valid email address.
+   * @param control
+   * @returns {any} null if everything is OK or a json with error
+   */
+  emailValidator(control: FormControl) {
+    const EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+    if ((control.value !== '' && control.value !== null) && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
+      return {'incorrectMailFormat': true};
+    }
+    return null;
+  }
+
+  /**
+   * Check if input is a valid number
+   *
+   * @param input
+   * @returns {boolean}
+   */
+  isNumber(input: string) {
+    const pattern = /^[0-9]+$/;
+    if (!pattern.test(input)) {
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * Check if input is a valid number as formbuilder
+   *
+   * @param input
+   * @returns {boolean}
+   */
+  isValidPhoneFormBuilder(control: FormControl) {
+    const pattern = /^-?[0-9]*$/;
+    if ((control.value !== '' && control.value !== null) && (control.value.length !== 8 || !pattern.test(control.value))) {
+      return {'isInvalidPhone': true};
+    }
+    return null;
+  }
+
+
+  /**
+   *  Form Builder
+   *  @Input input: string to validate
+   */
+  isValidPasswordFormBuilder(control: FormControl) {
+    const CAPITAL = /.*[A-Z].*/;
+    const LOWER_CASE = /.*[a-z].*/;
+    const DIGIT = /\d/;
+    const input = control.value;
+    if (input) {
+      if (input.length < 8) {
+        return {'invalidPasswordFormat': true};
+      }
+      if (!CAPITAL.test(input)) {
+        return {'invalidPasswordFormat': true};
+      }
+      if (!LOWER_CASE.test(input)) {
+        return {'invalidPasswordFormat': true};
+      }
+      if (!DIGIT.test(input)) {
+        return {'invalidPasswordFormat': true};
+      }
+    }
+    return null;
+  }
+
+
+}
+
+

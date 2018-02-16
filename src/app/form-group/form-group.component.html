@@ -1,4 +1,4 @@
-<form [formGroup]='exampleForm' (ngSubmit)="SubmitData(exampleForm)" novalidate
+<form [formGroup]='exampleForm' (ngSubmit)="SubmitData(exampleForm.value)" novalidate
       class="formexample-section">
 
   <div class="row">
@@ -32,25 +32,23 @@
                  formControlName="input_text"
                  name="input_text"
                  required>
-          <!-- <div
-            *ngIf="exampleForm.controls['input_text'].hasError('required') && exampleForm.controls['input_text'].touched"
+          <div *ngIf="exampleForm.controls['input_text'].hasError('required') && exampleForm.controls['input_text'].touched"
             class="error" translate>form.error.text_missing
-          </div> -->
+          </div>
         </div>
 
         <!-- Type tel -->
         <div class="form-group">
           <label class="content-header" translate>form.label.type_tel</label>
           <input class="details-input form-control"
-                 type="text"
+                 type="number"
                  placeholder="{{'form.placeholder.tel' | translate}}"
                  formControlName="input_tel"
                  name="input_tel"
                  required>
-          <!-- <div
-             *ngIf="exampleForm.controls['input_tel'].hasError('required') && exampleForm.controls['input_tel'].touched"
+          <div *ngIf="(exampleForm.controls['input_tel'].hasError('required') || exampleForm.controls['input_email'].hasError('isValidPhoneFormBuilder')) && exampleForm.controls['input_tel'].touched"
              class="error" translate>form.error.tel_missing
-           </div> -->
+           </div>
         </div>
 
         <!-- Type number -->
@@ -62,10 +60,9 @@
                  formControlName="input_number"
                  name="input_number"
                  required>
-          <!--  <div
-             *ngIf="exampleForm.controls['input_number'].hasError('required') && exampleForm.controls['input_number'].touched"
+          <div *ngIf="exampleForm.controls['input_number'].hasError('required') && exampleForm.controls['input_number'].touched"
              class="error" translate>form.error.number_missing
-           </div> -->
+           </div>
         </div>
 
         <!-- Type email -->
@@ -77,10 +74,9 @@
                  formControlName="input_email"
                  name="input_email"
                  required>
-          <!-- <div
-            *ngIf="(exampleForm.controls['input_email'].hasError('required') || exampleForm.controls['input_email'].hasError('incorrectMailFormat')) && exampleForm.controls['email'].touched"
+          <div *ngIf="(exampleForm.controls['input_email'].hasError('required') || exampleForm.controls['input_email'].hasError('incorrectMailFormat')) && exampleForm.controls['email'].touched"
             class="error" translate>form.error.email_missing
-          </div> -->
+          </div>
         </div>
 
         <!-- Type password -->
@@ -92,14 +88,13 @@
                  formControlName="input_password"
                  name="input_password"
                  required>
-          <!-- <div
-             *ngIf="userForm.controls['input_password'].hasError('required') && userForm.controls['input_password'].touched"
+          <div *ngIf="userForm.controls['input_password'].hasError('required') && userForm.controls['input_password'].touched"
              class="error" translate>form.error.password_missing
            </div>
            <div
              *ngIf="exampleForm.controls['input_password'].hasError('invalidPasswordFormat') && exampleForm.controls['input_password'].touched"
              class="error" translate>form.error.not_valid_password
-           </div> -->
+           </div>
         </div>
 
         <!-- Type domain -->
@@ -111,10 +106,9 @@
                  formControlName="input_domain"
                  name="input_domain"
                  required>
-          <!-- <div
-            *ngIf="exampleForm.controls['input_domain'].hasError('required') && exampleForm.controls['input_domain'].touched"
+          <div *ngIf="exampleForm.controls['input_domain'].hasError('required') && exampleForm.controls['input_domain'].touched"
             class="error" translate>form.error.domain_missing
-          </div> -->
+          </div>
         </div>
 
         <!-- Type url -->
@@ -126,10 +120,9 @@
                  formControlName="input_url"
                  name="input_url"
                  required>
-          <!--<div
-            *ngIf="exampleForm.controls['input_url'].hasError('required') && exampleForm.controls['input_url'].touched"
+          <div *ngIf="exampleForm.controls['input_url'].hasError('required') && exampleForm.controls['input_url'].touched"
             class="error" translate>form.error.url_missing
-          </div> -->
+          </div>
         </div>
 
 
@@ -143,10 +136,9 @@
                  placeholder="{{'form.placeholder.field_label' | translate}}"
                  required>
           <span class="field_label" translate>form.options.field_label</span>
-          <!-- <div
-            *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
+          <div *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
             class="error" translate>form.error.label_missing
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -192,8 +184,7 @@
         <!-- Dropdown -->
         <div class="dropdown">
           <label class="content-header col-md-12" translate>form.label.dropdown</label>
-          <select id="dropdown" class="form-control" [(ngModel)]="dropdownModel" [ngModelOptions]="{standalone: true}">
-            //standalone true as is not included in the form
+          <select id="dropdown" class="form-control" [(ngModel)]="dropdownModel" [ngModelOptions]="{standalone: true}"> //standalone true as is not included in the form
             <option *ngIf="!dropdownModel" [ngValue]="''" disabled translate>form.dropdown.choose</option>
             <option *ngFor="let example of dropdownExample" [ngValue]="example" translate>{{example}}
             </option>
