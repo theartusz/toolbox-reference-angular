@@ -56,7 +56,7 @@ describe('FormGroupComponent', () => {
     expect(formGroupComponent.exampleForm.controls['tel'].status).toBe('INVALID');
   }));
 
-  it('should be invalid form because of invalid person number', async(() => {
+  it('should be invalid form because of invalid personal number', async(() => {
     const fixture = TestBed.createComponent(FormGroupComponent);
     const formGroupComponent = fixture.debugElement.componentInstance;
     formGroupComponent.ngOnInit();
