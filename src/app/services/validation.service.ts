@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormControl, AbstractControl} from '@angular/forms';
 
 /**
  *
@@ -13,6 +13,21 @@ export class ValidatorService {
 
   constructor() {
   }
+
+  private static mod11OfNumberWithControlDigit(input: any) {
+    let controlNumber = 2;
+    let sumForMod = 0;
+
+    for (let i = input.toString().length - 2; i >= 0; --i) {
+      sumForMod += input.toString().charAt(i) * controlNumber;
+      if (++controlNumber > 7) {
+        controlNumber = 2;
+      }
+    }
+    const result = (11 - sumForMod % 11);
+    return result === 11 ? 0 : result;
+  }
+
 
   /**
    * Validate if from control has a valid email address.
@@ -106,19 +121,17 @@ export class ValidatorService {
     return null;
   }
 
-  private static mod11OfNumberWithControlDigit(input: any) {
-    let controlNumber = 2;
-    let sumForMod = 0;
-
-    for (let i = input.toString().length - 2; i >= 0; --i) {
-      sumForMod += input.toString().charAt(i) * controlNumber;
-      if (++controlNumber > 7) {
-        controlNumber = 2;
-      }
+  matchPassword(AC: AbstractControl) {
+    const password = AC.get('password').value;
+    const confirmPassword = AC.get('repeatPassword').value;
+    if (password !== confirmPassword) {
+      return {'missmatchPassword': true};
+    } else {
+      return null;
     }
-    const result = (11 - sumForMod % 11);
-    return result === 11 ? 0 : result;
   }
+
+
 
 }
 

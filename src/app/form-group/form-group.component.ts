@@ -10,29 +10,34 @@ import {ValidatorService} from '../services/validation.service';
 })
 export class FormGroupComponent implements OnInit {
   exampleForm: FormGroup;
-  input_text: string;
+  text: string;
   first_search: string;
-  input_tel: number;
-  input_personal_number: number;
-  input_email: string;
-  input_password: string;
-  input_domain: string;
-  input_url: string;
+  tel: number;
+  personal_number: number;
+  email: string;
+  password: string;
+  repeatPassword: string;
+  domain: string;
+  url: string;
   input_label: string;
   dropdownModel: string;
   dropdownExample: any[];
+  showRepeatPassword: boolean;
 
   constructor(private fb: FormBuilder, public translate: TranslateService, public validationService: ValidatorService) {
     this.exampleForm = this.fb.group({
       first_search: ['', Validators.required],
-      input_text: ['', Validators.required],
-      input_tel: ['', Validators.compose([Validators.required, this.validationService.isValidPhoneFormBuilder])],
-      input_personal_number: ['', Validators.compose([Validators.required, this.validationService.isValidPersonalNumber])],
-      input_email: ['', Validators.compose([Validators.required, this.validationService.emailValidator])],
-      input_password: ['', Validators.compose([Validators.required, this.validationService.isValidPasswordFormBuilder])],
-      input_domain: ['', Validators.required],
-      input_url: ['', Validators.required],
+      text: ['', Validators.required],
+      tel: ['', Validators.compose([Validators.required, this.validationService.isValidPhoneFormBuilder])],
+      personal_number: ['', Validators.compose([Validators.required, this.validationService.isValidPersonalNumber])],
+      email: ['', Validators.compose([Validators.required, this.validationService.emailValidator])],
+      password: ['', Validators.compose([Validators.required, this.validationService.isValidPasswordFormBuilder])],
+      repeatPassword: ['', Validators.required],
+      domain: ['', Validators.required],
+      url: ['', Validators.required],
       input_label:  ['', Validators.required]
+    }, {
+      validator: this.validationService.matchPassword // your validation method
     });
 
     this.dropdownExample = [
@@ -48,6 +53,18 @@ export class FormGroupComponent implements OnInit {
 
   SubmitData(exampleForm: NgForm) {
     console.log(exampleForm.value);
+  }
+
+
+  /**
+   * Reset password validation form.
+   */
+  repeatPasswordValidation() {
+    // turn on password validation
+    this.exampleForm.controls['repeatPassword'].setErrors({
+      invalidPasswordFormat: true,
+      required: true
+    });
   }
 
 }

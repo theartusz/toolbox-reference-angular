@@ -31,6 +31,7 @@
       "type_personal_number": "Type personal number",
       "type_email": "Type email",
       "type_password": "Type password",
+      "repeat_password": "Repeat password",
       "type_domain": "Type domain",
       "type_url": "Type url",
       "field_label": "Field label",
@@ -48,6 +49,7 @@
       "personal_number": "000000 00000",
       "email": "your@email.com",
       "password": "Min 8 characters and 1 large letter",
+      "repeat_password":"Repeat password",
       "domain": "yourdomain.com",
       "url": "http://yourdomain.com",
       "second_search": "What are you looking for?",
@@ -66,7 +68,9 @@
       "not_valid_password": "Password is not valid",
       "not_valid_email": "Email is not valid",
       "not_valid_tel": "Phone number is not valid",
-      "not_valid_personal_number": "Personal number is not valid"
+      "not_valid_personal_number": "Personal number is not valid",
+      "has_to_be_equal": "Passwords must be equal",
+      "repeat_password": "You have to repeat the password"
     },
     "dropdown": {
       "example": "Example",

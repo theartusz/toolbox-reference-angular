@@ -33,11 +33,11 @@
           <input class="details-input form-control"
                  type="text"
                  placeholder="{{'form.placeholder.text' | translate}}"
-                 formControlName="input_text"
-                 name="input_text"
+                 formControlName="text"
+                 name="text"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_text'].hasError('required') && exampleForm.controls['input_text'].touched"
+          <div *ngIf="exampleForm.controls['text'].hasError('required') && exampleForm.controls['text'].touched"
             class="error" translate>form.error.text_missing
           </div>
 
@@ -49,33 +49,33 @@
           <input class="details-input form-control"
                  type="number"
                  placeholder="{{'form.placeholder.tel' | translate}}"
-                 formControlName="input_tel"
-                 name="input_tel"
+                 formControlName="tel"
+                 name="tel"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_tel'].hasError('required') && exampleForm.controls['input_tel'].touched"
+          <div *ngIf="exampleForm.controls['tel'].hasError('required') && exampleForm.controls['tel'].touched"
              class="error" translate>form.error.tel_missing
            </div>
-          <div *ngIf="exampleForm.controls['input_tel'].hasError('isValidPhoneFormBuilder') && exampleForm.controls['input_tel'].touched"
+          <div *ngIf="exampleForm.controls['tel'].hasError('isValidPhoneFormBuilder') && exampleForm.controls['tel'].touched"
                class="error" translate>form.error.not_valid_tel
           </div>
 
         </div>
 
-        <!-- Type personalnumber -->
+        <!-- Type personal number -->
         <div class="form-group">
           <label class="content-header" translate>form.label.type_personal_number</label>
           <input class="details-input form-control"
                  type="text"
                  placeholder="{{'form.placeholder.personal_number' | translate}}"
-                 formControlName="input_personal_number"
-                 name="input_personal_number"
+                 formControlName="personal_number"
+                 name="personal_number"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_personal_number'].hasError('required') && exampleForm.controls['input_personal_number'].touched"
+          <div *ngIf="exampleForm.controls['personal_number'].hasError('required') && exampleForm.controls['personal_number'].touched"
              class="error" translate>form.error.personal_number_missing
            </div>
-          <div *ngIf="exampleForm.controls['input_personal_number'].hasError('invalidAccountNumber') && exampleForm.controls['input_personal_number'].touched"
+          <div *ngIf="exampleForm.controls['personal_number'].hasError('invalidAccountNumber') && exampleForm.controls['personal_number'].touched"
                class="error" translate>form.error.not_valid_personal_number
           </div>
 
@@ -87,14 +87,14 @@
           <input class="details-input form-control"
                  type="email"
                  placeholder="{{'form.placeholder.email' | translate}}"
-                 formControlName="input_email"
-                 name="input_email"
+                 formControlName="email"
+                 name="email"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_email'].hasError('required') && exampleForm.controls['input_email'].touched"
+          <div *ngIf="exampleForm.controls['email'].hasError('required') && exampleForm.controls['email'].touched"
             class="error" translate>form.error.email_missing
           </div>
-          <div *ngIf="exampleForm.controls['input_email'].hasError('incorrectMailFormat') && exampleForm.controls['input_email'].touched"
+          <div *ngIf="exampleForm.controls['email'].hasError('incorrectMailFormat') && exampleForm.controls['email'].touched"
                class="error" translate>form.error.not_valid_email
           </div>
 
@@ -102,22 +102,40 @@
 
         <!-- Type password -->
         <div class="form-group">
-          <label class="content-header" translate>form.label.type_password</label>
+          <label class="content-header col-md-12" translate>form.label.type_password</label>
           <input class="details-input form-control"
                  placeholder="{{'form.placeholder.password' | translate}}"
                  type="password"
-                 formControlName="input_password"
-                 name="input_password"
+                 formControlName="password"
+                 name="password"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_password'].hasError('required') && exampleForm.controls['input_password'].touched"
+          <div *ngIf="exampleForm.controls['password'].hasError('required') && exampleForm.controls['password'].touched"
              class="error" translate>form.error.password_missing
            </div>
            <div
-             *ngIf="exampleForm.controls['input_password'].hasError('invalidPasswordFormat') && exampleForm.controls['input_password'].touched"
+             *ngIf="exampleForm.controls['password'].hasError('invalidPasswordFormat') && exampleForm.controls['password'].touched"
              class="error" translate>form.error.not_valid_password
            </div>
+        </div>
 
+        <!-- Repeat password -->
+        <div class="form-group">
+            <label class="content-header col-md-12" translate>form.label.repeat_password</label>
+            <input class="details-input form-control"
+                   placeholder="{{'form.placeholder.repeat_password' | translate}}"
+                   type="password"
+                   formControlName="repeatPassword"
+                   name="repeatPassword"
+                   ng-change="repeatPasswordValidation()"
+                   required>
+
+            <div *ngIf="exampleForm.controls['repeatPassword'].hasError('required') && exampleForm.controls['repeatPassword'].touched"
+              class="error" translate>form.error.repeat_password
+            </div>
+            <div *ngIf="exampleForm?.hasError('missmatchPassword') && exampleForm.controls['repeatPassword'].touched"
+                 class="error" translate>form.error.has_to_be_equal
+            </div>
         </div>
 
         <!-- Type domain -->
@@ -126,11 +144,11 @@
           <input class="details-input form-control"
                  type="text"
                  placeholder="{{'form.placeholder.domain' | translate}}"
-                 formControlName="input_domain"
-                 name="input_domain"
+                 formControlName="domain"
+                 name="domain"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_domain'].hasError('required') && exampleForm.controls['input_domain'].touched"
+          <div *ngIf="exampleForm.controls['domain'].hasError('required') && exampleForm.controls['domain'].touched"
             class="error" translate>form.error.domain_missing
           </div>
 
@@ -142,11 +160,11 @@
           <input class="details-input form-control"
                  type="url"
                  placeholder="{{'form.placeholder.url' | translate}}"
-                 formControlName="input_url"
-                 name="input_url"
+                 formControlName="url"
+                 name="url"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_url'].hasError('required') && exampleForm.controls['input_url'].touched"
+          <div *ngIf="exampleForm.controls['url'].hasError('required') && exampleForm.controls['url'].touched"
             class="error" translate>form.error.url_missing
           </div>
 
