@@ -56,7 +56,7 @@
           <div *ngIf="exampleForm.controls['tel'].hasError('required') && exampleForm.controls['tel'].touched"
              class="error" translate>form.error.tel_missing
            </div>
-          <div *ngIf="exampleForm.controls['tel'].hasError('isValidPhoneFormBuilder') && exampleForm.controls['tel'].touched"
+          <div *ngIf="exampleForm.controls['tel'].hasError('isInvalidPhone') && exampleForm.controls['tel'].touched"
                class="error" translate>form.error.not_valid_tel
           </div>
 
@@ -127,7 +127,6 @@
                    type="password"
                    formControlName="repeatPassword"
                    name="repeatPassword"
-                   ng-change="repeatPasswordValidation()"
                    required>
 
             <div *ngIf="exampleForm.controls['repeatPassword'].hasError('required') && exampleForm.controls['repeatPassword'].touched"
@@ -183,7 +182,7 @@
           <span class="field_label" translate>form.options.field_label</span>
 
           <div *ngIf="exampleForm.controls['input_label'].hasError('required') && exampleForm.controls['input_label'].touched"
-            class="error" translate>form.error.number_missing
+            class="error" translate>form.error.input_missing
           </div>
 
         </div>

@@ -65,12 +65,13 @@
       "password_missing": "Password is missing",
       "domain_missing": "Domain  is missing",
       "url_missing": "Url is missing",
+      "input_missing": "Input is missing",
       "not_valid_password": "Password is not valid",
       "not_valid_email": "Email is not valid",
       "not_valid_tel": "Phone number is not valid",
       "not_valid_personal_number": "Personal number is not valid",
       "has_to_be_equal": "Passwords must be equal",
-      "repeat_password": "You have to repeat the password"
+      "repeat_password": "Repeat the password"
     },
     "dropdown": {
       "example": "Example",

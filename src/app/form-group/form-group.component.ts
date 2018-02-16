@@ -22,7 +22,6 @@ export class FormGroupComponent implements OnInit {
   input_label: string;
   dropdownModel: string;
   dropdownExample: any[];
-  showRepeatPassword: boolean;
 
   constructor(private fb: FormBuilder, public translate: TranslateService, public validationService: ValidatorService) {
     this.exampleForm = this.fb.group({
@@ -53,18 +52,6 @@ export class FormGroupComponent implements OnInit {
 
   SubmitData(exampleForm: NgForm) {
     console.log(exampleForm.value);
-  }
-
-
-  /**
-   * Reset password validation form.
-   */
-  repeatPasswordValidation() {
-    // turn on password validation
-    this.exampleForm.controls['repeatPassword'].setErrors({
-      invalidPasswordFormat: true,
-      required: true
-    });
   }
 
 }
