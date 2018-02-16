@@ -82,6 +82,43 @@ export class ValidatorService {
     return null;
   }
 
+  isValidPersonalNumber(control: FormControl) {
+    let personalNumber = control.value;
+    personalNumber = personalNumber.toString().replace(/\./g, '');
+    personalNumber = personalNumber.toString().replace(/ /g, '');
+    if (personalNumber) {
+      if (!isNaN(personalNumber)) {
+        if (!personalNumber) {
+          return {'invalidAccountNumber': true};
+        }
+        if (personalNumber.toString().length !== 11) {
+          return {'invalidAccountNumber': true};
+        }
+        if (parseInt(personalNumber.charAt(personalNumber.length - 1), 10) === ValidatorService.mod11OfNumberWithControlDigit(personalNumber)) {
+          return null;
+        } else {
+          return {'invalidAccountNumber': true};
+        }
+      } else {
+        return {'invalidAccountNumber': true};
+      }
+    }
+    return null;
+  }
+
+  private static mod11OfNumberWithControlDigit(input: any) {
+    let controlNumber = 2;
+    let sumForMod = 0;
+
+    for (let i = input.toString().length - 2; i >= 0; --i) {
+      sumForMod += input.toString().charAt(i) * controlNumber;
+      if (++controlNumber > 7) {
+        controlNumber = 2;
+      }
+    }
+    const result = (11 - sumForMod % 11);
+    return result === 11 ? 0 : result;
+  }
 
 }
 

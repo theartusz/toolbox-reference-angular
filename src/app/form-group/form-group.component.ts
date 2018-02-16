@@ -13,7 +13,7 @@ export class FormGroupComponent implements OnInit {
   input_text: string;
   first_search: string;
   input_tel: number;
-  input_number: number;
+  input_personal_number: number;
   input_email: string;
   input_password: string;
   input_domain: string;
@@ -27,7 +27,7 @@ export class FormGroupComponent implements OnInit {
       first_search: ['', Validators.required],
       input_text: ['', Validators.required],
       input_tel: ['', Validators.compose([Validators.required, this.validationService.isValidPhoneFormBuilder])],
-      input_number: ['', Validators.required],
+      input_personal_number: ['', Validators.compose([Validators.required, this.validationService.isValidPersonalNumber])],
       input_email: ['', Validators.compose([Validators.required, this.validationService.emailValidator])],
       input_password: ['', Validators.compose([Validators.required, this.validationService.isValidPasswordFormBuilder])],
       input_domain: ['', Validators.required],

@@ -62,19 +62,22 @@
 
         </div>
 
-        <!-- Type number -->
+        <!-- Type personalnumber -->
         <div class="form-group">
-          <label class="content-header" translate>form.label.type_number</label>
+          <label class="content-header" translate>form.label.type_personal_number</label>
           <input class="details-input form-control"
-                 type="number"
-                 placeholder="{{'form.placeholder.number' | translate}}"
-                 formControlName="input_number"
-                 name="input_number"
+                 type="text"
+                 placeholder="{{'form.placeholder.personal_number' | translate}}"
+                 formControlName="input_personal_number"
+                 name="input_personal_number"
                  required>
 
-          <div *ngIf="exampleForm.controls['input_number'].hasError('required') && exampleForm.controls['input_number'].touched"
-             class="error" translate>form.error.number_missing
+          <div *ngIf="exampleForm.controls['input_personal_number'].hasError('required') && exampleForm.controls['input_personal_number'].touched"
+             class="error" translate>form.error.personal_number_missing
            </div>
+          <div *ngIf="exampleForm.controls['input_personal_number'].hasError('invalidAccountNumber') && exampleForm.controls['input_personal_number'].touched"
+               class="error" translate>form.error.not_valid_personal_number
+          </div>
 
         </div>
 
