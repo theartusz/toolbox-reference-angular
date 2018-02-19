@@ -11,7 +11,8 @@
   "navigation" : {
     "welcome" : "You just navigated!",
     "back" : "Back",
-    "material": "Google Material Calender"
+    "material": "Google Material Calender",
+    "table": "Responsive Table"
   },
   "login" : {
     "welcome" : "Login Screen"
