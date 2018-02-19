@@ -20,14 +20,14 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
-        GreeterComponent
+        GreeterComponent,
+        DatexPipe
       ],
       imports: [
         RouterTestingModule,
         TranslateModule.forRoot()
       ],
       providers: [
-        DatexPipe,
         [ {provide: ExampleService, useClass: ExampleServiceStub } ]
       ]
     }).compileComponents();
