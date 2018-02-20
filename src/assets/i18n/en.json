@@ -1,0 +1,96 @@
+{
+  "home": {
+    "welcome": "Welcome to this Angular Boilerplate",
+    "navigate": "Navigate",
+    "service_button": "Is service working?",
+    "greeter": {
+      "header": "Angular - Boilerplate",
+      "info": "Have a look at the ReadMe file for more information on how to setup your own project!"
+    }
+  },
+  "navigation": {
+    "welcome": "You just navigated!",
+    "back": "Back",
+    "form": "Form with validation"
+  },
+  "login": {
+    "welcome": "Login Screen"
+  },
+  "error_page": {
+    "placeholder_header": "404 - Error Page",
+    "placeholder_paragraph": "Replace the following HTML with the desired HTML and SCSS/CSS"
+  },
+  "form": {
+    "header": {
+      "form_example": "Form example with validation"
+    },
+    "label": {
+      "type_search": "Type search",
+      "type_text": "Type text",
+      "type_tel": "Type tel",
+      "type_personal_number": "Type personal number",
+      "type_email": "Type email",
+      "type_password": "Type password",
+      "repeat_password": "Repeat password",
+      "type_domain": "Type domain",
+      "type_url": "Type url",
+      "field_label": "Field label",
+      "search": "Search",
+      "textarea": "Textarea",
+      "radiobutton": "Radio buttons",
+      "checkbox": "Checkboxes",
+      "dropdown": "Dropdown",
+      "file": "Type file"
+    },
+    "placeholder": {
+      "search": "Search query",
+      "text": "Plain text",
+      "tel": "+45 12345678",
+      "personal_number": "000000 00000",
+      "email": "your@email.com",
+      "password": "Min 8 characters and 1 large letter",
+      "repeat_password":"Repeat password",
+      "domain": "yourdomain.com",
+      "url": "http://yourdomain.com",
+      "second_search": "What are you looking for?",
+      "textarea": "Type in your message",
+      "field_label": "1.050"
+    },
+    "error": {
+      "search_missing": "Search text is missing",
+      "text_missing": "Text is missing",
+      "tel_missing": "Telephone number is missing",
+      "email_missing": "Email is missing",
+      "personal_number_missing": "Personal number is missing",
+      "password_missing": "Password is missing",
+      "domain_missing": "Domain  is missing",
+      "url_missing": "Url is missing",
+      "input_missing": "Input is missing",
+      "not_valid_password": "Password is not valid",
+      "not_valid_email": "Email is not valid",
+      "not_valid_tel": "Phone number is not valid",
+      "not_valid_personal_number": "Personal number is not valid",
+      "has_to_be_equal": "Passwords must be equal",
+      "repeat_password": "Repeat the password"
+    },
+    "dropdown": {
+      "example": "Example",
+      "choose": "Choose one...",
+      "exampleOne": "Example 1",
+      "exampleTwo": "Example 2",
+      "exampleThree": "Example 3"
+    },
+    "options": {
+      "checkbox": "Checkbox",
+      "yes": "Yes",
+      "no": "No",
+      "maybe": "Maybe",
+      "upload_file": "Upload file",
+      "field_label": "kr.",
+      "search": "Search"
+    },
+    "button": {
+      "example": "Button"
+    }
+  }
+}

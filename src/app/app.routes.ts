@@ -7,7 +7,8 @@ import {HomeComponent} from './home/home.component';
 import {ErrorComponent} from './error/error.component';
 import {NavigationDestinationComponent} from './navigation-destination/navigation-destination.component';
 import {GoogleMaterialComponent} from './google-material/google-material.component';
-import {TableComponent} from "./repsonsive_table/table.component";
+import {TableComponent} from './repsonsive_table/table.component';
+import {FormGroupComponent} from './form-group/form-group.component';
 
 const APP_ROUTES: Routes = [
   {
@@ -24,6 +25,10 @@ const APP_ROUTES: Routes = [
   },{
     path: 'table',
     component: TableComponent
+  },
+  {
+    path: 'form',
+    component: FormGroupComponent
   },
   {
     path: '**',
