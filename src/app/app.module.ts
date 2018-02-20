@@ -23,7 +23,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { ErrorModule } from './error/error.module';
 import { GoogleMaterialModule } from './google-material/google-material.module';
-import {TableModule} from "./repsonsive_table/table.module";
+import {TableModule} from './repsonsive_table/table.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
