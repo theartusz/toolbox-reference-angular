@@ -1,24 +1,23 @@
 
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from 'vendor/angular';
 
 // Components
-import {
-  AdminDashboardComponent,
-  SkillComponent, SkillsComponent
-} from '../index.admin';
+import { AdminDashboardComponent } from 'app/admin/dashboard/admin-dashboard.component';
+import { SkillsComponent } from 'app/admin/skills/skills.component';
+import { SkillComponent } from 'app/admin/skills/shared/skill/skill.component';
 
 
 const ADMIN_ROUTES: Routes = [
   {
-    path: 'AdminDashboard',
+    path: 'adminDashboard',
     component: AdminDashboardComponent
   },
   {
-    path: 'Skill',
+    path: 'skill',
     component: SkillComponent
   },
   {
-    path: 'Skills',
+    path: 'skills',
     component: SkillsComponent
   }
 ];

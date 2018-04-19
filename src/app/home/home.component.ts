@@ -1,11 +1,11 @@
-import {Component, HostListener, Inject, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, OnInit } from 'vendor/angular';
 
 @Component({
   selector: 'boilerplate-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.scss']
+  styleUrls: ['./shared/home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
   today: Date;
 
   constructor() {
@@ -13,9 +13,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.today = new Date();
-  }
-
-  ngAfterViewInit() {
-
   }
 }

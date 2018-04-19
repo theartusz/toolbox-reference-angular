@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { Component } from 'vendor/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'boilerplate-app-root',
@@ -7,7 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(translate: TranslateService) {
+  constructor(private translate: TranslateService) {
     translate.addLangs(['en']);
     translate.setDefaultLang('en');
     translate.use('en');

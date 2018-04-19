@@ -117,13 +117,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "boilerplate",
+      "fritidsfiske",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "boilerplate",
+      "fritidsfiske",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

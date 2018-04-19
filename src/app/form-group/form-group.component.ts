@@ -1,12 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, FormControl, Validators, NgForm} from '@angular/forms';
-import {TranslateService} from '@ngx-translate/core';
-import {ValidatorService} from '../services/validation.service';
+import { Component, OnInit, FormBuilder, FormGroup, Validators, NgForm } from 'vendor/angular';
+
+// services
+import { TranslateService } from '@ngx-translate/core';
+import { ValidatorService } from 'app/shared/utility/validation.service';
 
 @Component({
   selector: 'boilerplate-form-group',
   templateUrl: 'form-group.component.html',
-  styleUrls: ['form-group.component.scss']
+  styleUrls: ['./shared/form-group.component.scss']
 })
 export class FormGroupComponent implements OnInit {
   exampleForm: FormGroup;
@@ -34,10 +35,10 @@ export class FormGroupComponent implements OnInit {
       repeatPassword: ['', Validators.required],
       domain: ['', Validators.required],
       url: ['', Validators.required],
-      input_label:  ['', Validators.required]
+      input_label: ['', Validators.required]
     }, {
-      validator: this.validationService.matchPassword // your validation method
-    });
+        validator: this.validationService.matchPassword // your validation method
+      });
 
     this.dropdownExample = [
       this.translate.instant('form.dropdown.exampleOne'),
