@@ -11,7 +11,9 @@
   "navigation": {
     "welcome": "You just navigated!",
     "back": "Back",
-    "form": "Form with validation"
+    "form": "Form with validation",
+    "material": "Google Material Components",
+    "table": "Responsive table"
   },
   "login": {
     "welcome": "Login Screen"
@@ -49,7 +51,7 @@
       "personal_number": "000000 00000",
       "email": "your@email.com",
       "password": "Min 8 characters and 1 large letter",
-      "repeat_password":"Repeat password",
+      "repeat_password": "Repeat password",
       "domain": "yourdomain.com",
       "url": "http://yourdomain.com",
       "second_search": "What are you looking for?",
@@ -92,5 +94,17 @@
     "button": {
       "example": "Button"
     }
+  },
+  "material": {
+    "header": "Material Component",
+    "calender": {
+      "header": "Calender",
+      "choose_date": "Please choose date"
+    },
+    "input": {
+      "header": "Input Control",
+      "text": "Please enter text"
+    }
   }
+
 }

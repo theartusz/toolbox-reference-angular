@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from 'vendor/angular';
 
 @Injectable()
 export class LoginService {

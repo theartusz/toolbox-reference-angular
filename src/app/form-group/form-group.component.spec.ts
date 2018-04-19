@@ -1,15 +1,15 @@
 /* tslint:disable:no-unused-variable */
 
-import {TestBed, async} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {TranslateModule} from '@ngx-translate/core';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {FormGroupComponent} from './form-group.component';
-import {ValidatorService} from '../services/validation.service';
-import {SharedModule} from '../shared/shared.module';
-import {RouterModule} from '@angular/router';
+import {
+  TestBed, async, RouterTestingModule, FormsModule, ReactiveFormsModule,
+  NO_ERRORS_SCHEMA, RouterModule
+} from 'vendor/angular';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { FormGroupComponent } from 'app/form-group/form-group.component';
+import { ValidatorService } from 'app/shared/utility/validation.service';
+import { SharedModule } from 'app/shared/shared.module';
+
 
 
 describe('FormGroupComponent', () => {
@@ -21,7 +21,6 @@ describe('FormGroupComponent', () => {
         FormGroupComponent
       ],
       imports: [
-        BrowserModule,
         RouterModule,
         RouterTestingModule,
         SharedModule,

@@ -1,8 +1,8 @@
-import {Directive, ElementRef, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import { Directive, ElementRef, OnDestroy, OnInit } from 'vendor/angular';
+import { Subscription } from 'vendor/rxJs';
 
 // Services
-import {SpinnerService} from './spinner.service';
+import { SpinnerService } from 'app/shared/spinner/spinner.service';
 
 @Directive({
   selector: '[boilerplateSpinner]'

@@ -1,8 +1,7 @@
-import {TestBed, async} from '@angular/core/testing';
+import {TestBed, async, RouterTestingModule} from 'vendor/angular';
 
 import {AppComponent} from './app.component';
 import {TranslateModule} from '@ngx-translate/core';
-import {RouterTestingModule} from '@angular/router/testing';
 import {GreeterComponent} from './home/greeter/greeter.component';
 
 describe('AppComponent', () => {

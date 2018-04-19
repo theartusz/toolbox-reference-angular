@@ -1,6 +1,5 @@
-import {Injectable} from '@angular/core';
-import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import { Injectable, HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from 'vendor/angular';
+import { Observable } from 'vendor/rxJs';
 
 /**
  * The following class is intercepting the HTTP-request.

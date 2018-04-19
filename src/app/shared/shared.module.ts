@@ -1,26 +1,47 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {TranslateModule} from '@ngx-translate/core';
-import {RouterModule} from '@angular/router';
-import {DatexPipe} from './pipes/datex.pipe';
+import { NgModule, HttpClientModule, RouterModule, CommonModule, HTTP_INTERCEPTORS } from 'vendor/angular';
+import { MomentModule } from 'angular2-moment';
+
+// spinner
+import { SpinnerDirective } from 'app/shared/spinner/spinner.directive';
+
+// pipes
+import { DatexPipe } from 'app/shared/pipes/datex.pipe';
+
+// services
+import { SpinnerService } from 'app/shared/spinner/spinner.service';
+import { ValidatorService } from 'app/shared/utility/validation.service';
+import { ExampleService } from 'app/shared/utility/example.service';
+import { HttpInterceptorHandler } from './interceptor/HttpInterceptorHandler';
+
 
 
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule.forRoot(),
-    RouterModule
+    RouterModule,
+    MomentModule
   ],
   declarations: [
-    DatexPipe
+    DatexPipe,
+    SpinnerDirective
   ],
   exports: [
-    DatexPipe
+    HttpClientModule,
+    CommonModule,
+    RouterModule,
+    DatexPipe,
+    SpinnerDirective
   ],
   providers: [
+    SpinnerService,
+    ExampleService,
+    ValidatorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorHandler,
+      multi: true,
+    }
   ]
 })
 

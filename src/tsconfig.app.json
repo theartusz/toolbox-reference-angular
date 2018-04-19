@@ -2,12 +2,20 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
+    "experimentalDecorators": true,
     "baseUrl": "./",
     "module": "es2015",
-    "types": []
+    "types": [],
+    "paths": {
+    }
   },
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false,
+    "skipMetadataEmit": true,
+    "annotateForClosureCompiler":true
+  }
 }

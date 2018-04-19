@@ -1,12 +1,10 @@
 /**
  * Created by orjanertkjern on 24/08/2017.
  */
-import {TestBed, async} from '@angular/core/testing';
-
-import {TranslateModule} from '@ngx-translate/core';
-import {RouterTestingModule} from '@angular/router/testing';
-import {ExampleService} from '../../services/example.service';
-import {SkillsComponent} from './skills.component';
+import { TestBed, async, RouterTestingModule } from 'vendor/angular';
+import { TranslateModule } from '@ngx-translate/core';
+import { ExampleService } from 'app/shared/utility/example.service';
+import { SkillsComponent } from 'app/admin/skills/skills.component';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {

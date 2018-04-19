@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from 'vendor/angular';
 
 @Component({
   selector: 'boilerplate-skills',
   templateUrl: 'skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrls: ['./shared/skills.component.scss']
 })
 
 export class SkillsComponent implements OnInit {
