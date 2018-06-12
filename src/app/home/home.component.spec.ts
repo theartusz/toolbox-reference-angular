@@ -1,12 +1,16 @@
-import {TestBed, async} from '@angular/core/testing';
+import { TestBed, async, RouterTestingModule } from 'vendor/angular';
+import { Observable } from 'vendor/rxJs';
+import { TranslateModule } from '@ngx-translate/core';
 
-import {TranslateModule} from '@ngx-translate/core';
-import {RouterTestingModule} from '@angular/router/testing';
-import {HomeComponent} from './home.component';
-import {GreeterComponent} from './greeter/greeter.component';
-import {ExampleService} from '../services/example.service';
-import {Observable} from 'rxjs/Observable';
-import {DatexPipe} from '../shared/pipes/datex.pipe';
+// components
+import { HomeComponent } from 'app/home/home.component';
+import { GreeterComponent } from 'app/home/shared/greeter/greeter.component';
+
+// services
+import { ExampleService } from 'app/shared/utility/example.service';
+
+// pipe
+import { DatexPipe } from 'app/shared/pipes/datex.pipe';
 
 describe('HomeComponent', () => {
 
@@ -28,7 +32,7 @@ describe('HomeComponent', () => {
         TranslateModule.forRoot()
       ],
       providers: [
-        [ {provide: ExampleService, useClass: ExampleServiceStub } ]
+        [{ provide: ExampleService, useClass: ExampleServiceStub }]
       ]
     }).compileComponents();
   }));

@@ -1,11 +1,9 @@
 /**
  * Created by orjanertkjern on 24/08/2017.
  */
-import {TestBed, async} from '@angular/core/testing';
-
-import {TranslateModule} from '@ngx-translate/core';
-import {RouterTestingModule} from '@angular/router/testing';
-import {ErrorComponent} from './error.component';
+import { TestBed, async, RouterTestingModule } from 'vendor/angular';
+import { TranslateModule } from '@ngx-translate/core';
+import { ErrorComponent } from 'app/error/error.component';
 
 describe('AdminComponent test', () => {
   beforeEach(async(() => {

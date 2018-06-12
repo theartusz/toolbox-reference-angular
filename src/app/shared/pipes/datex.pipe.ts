@@ -7,7 +7,7 @@
  * Ref: https://github.com/angular/angular/issues/9524
  */
 
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from 'vendor/angular';
 import * as moment from 'moment';
 
 @Pipe({

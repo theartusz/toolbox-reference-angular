@@ -1,31 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { MomentModule } from 'angular2-moment';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
-
-
-import {HttpInterceptorHandler} from './shared/interceptor/HttpInterceptorHandler';
-import {NavigationDestinationModule} from './navigation-destination/navigation-destination.module';
+import { NgModule, BrowserAnimationsModule, HttpClient } from 'vendor/angular';
 
 // app component
 import { AppComponent } from './app.component';
 
 // Module
-import { AppRouterModule } from './app.routes';
-import { LoginModule } from './Login/shared/login.module';
-import { AdminModule } from './admin/shared/admin.module';
-import { ServiceModule } from './services/shared/services.module';
-import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
-import {ErrorModule} from './error/error.module';
-import {FormGroupModule} from './form-group/form-group.module';
-import { GoogleMaterialModule } from './google-material/google-material.module';
-import {TableModule} from './repsonsive_table/table.module';
+import { SharedModule } from 'app/shared/index.shared';
+import { AppRouterModule } from 'app/app.routes';
+import { LoginModule } from 'app/login/index.login';
+import { AdminModule } from 'app/admin/index.admin';
+import { HomeModule } from 'app/home/index.home';
+import { ErrorModule } from 'app/error/index.error';
+import { FormGroupModule } from 'app/form-group/index.form-group';
+import { GoogleMaterialModule } from 'app/google-material/index.material';
+import { TableModule } from 'app/responsive_table/index.responsive';
+import { NavigationDestinationModule } from 'app/navigation-destination/index.navigation';
 
+// translation
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// create loader for translation
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -35,34 +29,28 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent
   ],
   imports: [
+    SharedModule,
     AdminModule,
     AppRouterModule,
-    BrowserModule,
+    BrowserAnimationsModule,
     ErrorModule,
-    FormsModule,
     FormGroupModule,
-    HomeModule,
-    HttpClientModule,
-    LoginModule,
-    MomentModule,
-    NavigationDestinationModule,
-    ServiceModule,
-    SharedModule,
-    TableModule,
     GoogleMaterialModule,
+    HomeModule,
+    LoginModule,
+    NavigationDestinationModule,
+    TableModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })],
+    })
+  ],
   exports: [],
-  providers: [{
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpInterceptorHandler,
-      multi: true,
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

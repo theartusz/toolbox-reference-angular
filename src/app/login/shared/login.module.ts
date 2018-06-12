@@ -1,19 +1,20 @@
-import {NgModule} from '@angular/core';
-import {TranslateModule} from '@ngx-translate/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { NgModule } from 'vendor/angular';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 // Route
-import { LoginRouterModule } from './login.route';
+import { LoginRouterModule } from 'app/login/shared/login.route';
 
 // Component
-import { LoginComponent } from '../login.component';
-import { LoginService } from './login.service';
+import { LoginComponent } from 'app/login/login.component';
+// services
 
+import { LoginService } from 'app/login/shared/login.service';
 
 @NgModule({
   imports: [
-    BrowserModule, LoginRouterModule,
-    TranslateModule.forRoot()
+    LoginRouterModule,
+    TranslateModule
   ],
   exports: [],
   declarations: [

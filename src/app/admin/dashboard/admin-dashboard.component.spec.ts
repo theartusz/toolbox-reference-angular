@@ -1,12 +1,11 @@
 /**
  * Created by orjanertkjern on 24/08/2017.
  */
-import {TestBed, async} from '@angular/core/testing';
+import { TestBed, async, RouterTestingModule } from 'vendor/angular';
+import { TranslateModule } from '@ngx-translate/core';
 
-import {TranslateModule} from '@ngx-translate/core';
-import {RouterTestingModule} from '@angular/router/testing';
-import {ExampleService} from '../../services/example.service';
-import {AdminDashboardComponent} from './admin-dashboard.component';
+import { ExampleService } from 'app/shared/utility/example.service';
+import { AdminDashboardComponent } from 'app/admin/dashboard/admin-dashboard.component';
 
 describe('AdminComponent test', () => {
   beforeEach(async(() => {
