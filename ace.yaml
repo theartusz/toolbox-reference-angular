@@ -1,0 +1,44 @@
+# App Configuration
+name: toolbox-reference-angular
+app: toolbox-reference-angular
+namespace: toolbox
+
+# Contact Information
+contact:
+  slack_channel: '#reference-apps'
+
+# Helm chart configuration
+helm:
+  url: https://evry-ace.github.io/ace-app-chart/
+  repoName: evry-ace
+  chart: evry-ace/ace-app-chart
+  version: ^0.0.1
+  helmVersion: 2.8.2
+
+common:
+  deployment:
+    image:
+      dockerRegistry: evrydevopsprod.azurecr.io
+
+environments:
+  dev:
+    cluster: kubernetes.ace.dev
+    namespace: toolbox-dev
+    overrides:
+      ingress:
+        host: toolbox-reference-angular.dev.evry.site
+  test:
+    cluster: kubernetes.ace.dev
+    namespace: toolbox-test
+    overrides:
+      ingress:
+        host: toolbox-reference-angular.test.evry.site
+  prod:
+    cluster: kubernetes.ace.prod
+    overrides:
+      ingress:
+        host: toolbox-reference-angular.prod.evry.site
+
+
+
+
