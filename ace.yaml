@@ -35,6 +35,7 @@ environments:
         host: toolbox-reference-angular.test.evry.site
   prod:
     cluster: kubernetes.ace.prod
+    namespace: toolbox-prod
     overrides:
       ingress:
         host: toolbox-reference-angular.prod.evry.site
