@@ -2,14 +2,12 @@ import {TestBed, async, RouterTestingModule} from 'vendor/angular';
 
 import {AppComponent} from './app.component';
 import {TranslateModule} from '@ngx-translate/core';
-import {GreeterComponent} from './home/greeter/greeter.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        GreeterComponent
+        AppComponent
       ],
       imports: [
         RouterTestingModule,
