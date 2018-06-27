@@ -30,6 +30,7 @@ pipeline {
               def testbed = docker.image('node:8')
               testbed.inside(){
                 sh "npm run build"
+                sh "npm run citest"
               }
             }
           }
