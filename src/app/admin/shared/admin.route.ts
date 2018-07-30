@@ -22,4 +22,4 @@ const ADMIN_ROUTES: Routes = [
   }
 ];
 
-export let AdminRouterModule = RouterModule.forRoot(ADMIN_ROUTES, { useHash: false });
+export let AdminRouterModule = RouterModule.forRoot(ADMIN_ROUTES);

@@ -11,4 +11,4 @@ const LOGIN_ROUTES: Routes = [
   }
 ];
 
-export let LoginRouterModule = RouterModule.forRoot(LOGIN_ROUTES, { useHash: false });
+export let LoginRouterModule = RouterModule.forRoot(LOGIN_ROUTES);

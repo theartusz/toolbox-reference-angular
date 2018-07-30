@@ -11,4 +11,4 @@ const GOOGLEMATERIAL_ROUTES: Routes = [
   }
 ];
 
-export let GoogleMaterialRouterModule = RouterModule.forRoot(GOOGLEMATERIAL_ROUTES, { useHash: false });
+export let GoogleMaterialRouterModule = RouterModule.forRoot(GOOGLEMATERIAL_ROUTES);

@@ -1,6 +1,8 @@
+
+import {of as observableOf} from 'rxjs';
 import { Injectable } from 'vendor/angular';
 import { Observable } from 'vendor/rxJs';
-import 'rxjs/add/observable/of';
+
 
 @Injectable()
 export class ExampleService {
@@ -9,6 +11,6 @@ export class ExampleService {
   }
 
   serviceExampleFunction(): Observable<boolean> {
-    return Observable.of(true);
+    return observableOf(true);
   }
 }
