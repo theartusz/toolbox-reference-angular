@@ -12,7 +12,7 @@ helm:
   url: https://evry-ace.github.io/ace-app-chart/
   repoName: evry-ace
   chart: evry-ace/ace-app-chart
-  version: ^0.0.1
+  version: ^0.0.3
   helmVersion: 2.8.2
 
 common:
