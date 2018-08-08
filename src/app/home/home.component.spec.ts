@@ -1,5 +1,5 @@
 import { TestBed, async, RouterTestingModule } from 'vendor/angular';
-import { Observable } from 'vendor/rxJs';
+import { Observable, observableOf } from 'vendor/rxJs';
 import { TranslateModule } from '@ngx-translate/core';
 
 // components
@@ -16,7 +16,7 @@ describe('HomeComponent', () => {
 
   class ExampleServiceStub {
     serviceExampleFunction(): Observable<boolean> {
-      return Observable.of(true);
+      return observableOf(true);
     }
   }
 
