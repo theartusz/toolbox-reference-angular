@@ -9,7 +9,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'boilerplate-google-material',
   templateUrl: './google-material.component.html',
-  styleUrls: ['./shared/google-material.component.scss'],
+  styleUrls: ['./google-material.component.scss'],
 
 })
 export class GoogleMaterialComponent {

@@ -7,7 +7,7 @@ import { ValidatorService } from 'app/shared/utility/validation.service';
 @Component({
   selector: 'boilerplate-form-group',
   templateUrl: 'form-group.component.html',
-  styleUrls: ['./shared/form-group.component.scss']
+  styleUrls: ['./form-group.component.scss']
 })
 export class FormGroupComponent implements OnInit {
   exampleForm: FormGroup;
