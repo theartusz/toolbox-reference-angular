@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 // Module
 import { SharedModule } from 'app/shared/index.shared';
 import { AppRouterModule } from 'app/app.routes';
-import { LoginModule } from 'app/login/index.login';
-import { AdminModule } from 'app/admin/index.admin';
 import { HomeModule } from 'app/home/index.home';
 import { ErrorModule } from 'app/error/index.error';
 import { FormGroupModule } from 'app/form-group/index.form-group';
@@ -30,14 +28,12 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     SharedModule,
-    AdminModule,
     AppRouterModule,
     BrowserAnimationsModule,
     ErrorModule,
     FormGroupModule,
     GoogleMaterialModule,
     HomeModule,
-    LoginModule,
     NavigationDestinationModule,
     TableModule,
     TranslateModule.forRoot({

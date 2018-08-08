@@ -12,4 +12,4 @@ const ERROR_ROUTES: Routes = [
     }
 ];
 
-export let ErrorRouterModule = RouterModule.forRoot(ERROR_ROUTES, { useHash: false });
+export let ErrorRouterModule = RouterModule.forRoot(ERROR_ROUTES);

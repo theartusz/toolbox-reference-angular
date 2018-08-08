@@ -12,4 +12,4 @@ const FORMGROUP_ROUTES: Routes = [
   }
 ];
 
-export let FormGroupRouterModule = RouterModule.forRoot(FORMGROUP_ROUTES, { useHash: false });
+export let FormGroupRouterModule = RouterModule.forRoot(FORMGROUP_ROUTES);

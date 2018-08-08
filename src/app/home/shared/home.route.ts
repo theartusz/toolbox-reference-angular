@@ -12,4 +12,4 @@ const HOME_ROUTES: Routes = [
   }
 ];
 
-export let HomeRouterModule = RouterModule.forRoot(HOME_ROUTES, { useHash: false });
+export let HomeRouterModule = RouterModule.forRoot(HOME_ROUTES);

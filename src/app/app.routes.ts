@@ -18,5 +18,5 @@ const APP_ROUTES: Routes = [
 
 ];
 
-export let AppRouterModule = RouterModule.forRoot(APP_ROUTES, { useHash: false });
+export let AppRouterModule = RouterModule.forRoot(APP_ROUTES, {scrollPositionRestoration: 'enabled'});
 
