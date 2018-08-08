@@ -5,6 +5,8 @@
 This project is a reference and a toolbox project for **Angular 5.1.0.**  The project could be used as a reference and toolbox for new or existing internal projects.
 The most used modules, component and libaries has been implemented into this project. 
 
+The project can be viewed here: https://toolbox-reference-angular.dev.evry.site/
+
 The project is following *John Papas Angular Styleguide*: https://angular.io/guide/styleguide
 
 The project is using the CSS-framework **Bootsrap 4**.
