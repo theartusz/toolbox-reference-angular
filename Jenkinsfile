@@ -5,92 +5,98 @@ pipeline {
     agent none
     options {
         buildDiscarder(logRotator(numToKeepStr: '5'))
+        skipDefaultCheckout()
     }
     stages {
-        stage('Install libraries') {
+        stage('Build and test') {
           agent {
-            label 'jenkins-docker-3'
+            node {
+              label 'jenkins-docker-3'
+            }
           }
-          steps {
-            script {
-              def testbed = docker.image('node:8')
-              testbed.inside(){
-                 sh "npm install"
+          options {
+            lock('build-lock')
+          }
+          stages {
+            stage('Install libraries') {
+              steps {
+                milestone(1)
+                script {
+                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                    checkout scm
+                    def testbed = docker.image('node:8')
+                    testbed.inside(){
+                      sh "npm install"
+                    }
+                  }
+                }
               }
             }
-          }
-        }
-
-        stage('Build client') {
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            script {
-              def testbed = docker.image('node:8')
-              testbed.inside(){
-                sh "npm run build"
-                sh "npm run citest"
+            stage('Build client') {
+              steps {
+                script {
+                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                    def testbed = docker.image('node:8')
+                    testbed.inside(){
+                      sh "npm run build"
+                      sh "npm run citest"
+                    }
+                  }
+                }
               }
             }
-          }
-        }
-
-        stage('Build docker') {
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            script {
-              image = new Docker(this, [nameOnly: true]).image('evrydevopsprod.azurecr.io')
-              sh "docker build . -t " + image
-            }
-          }
-        }
-
-        stage('Push docker') {
-          when {
-            branch 'master'
-          }
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            script {
-              withDockerRegistry([ credentialsId: "evrydevopsprod.azurecr.io", url: "https://evrydevopsprod.azurecr.io" ]) {
-                sh "docker push " + image
+            stage('Build docker') {
+              steps {
+                script {
+                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                    image = new Docker(this, [nameOnly: true]).image('evrydevopsprod.azurecr.io')
+                    sh "docker build . -t " + image
+                  }
+                }
               }
             }
-          }
-        }
-
-        stage('Helm dry run') {
-          when {
-            not {
-              branch 'master'
+            stage('Push docker') {
+              when {
+                branch 'master'
+              }
+              steps {
+                script {
+                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                    withDockerRegistry([ credentialsId: "evrydevopsprod.azurecr.io", url: "https://evrydevopsprod.azurecr.io" ]) {
+                      sh "docker push " + image
+                    }
+                  }
+                }
+              }
             }
-          }
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            script {
-              helmDeploy('dev', [image: image, dryRun: true])
-            }
-          }
-        }
 
-        stage('Deploy to dev') {
-          when {
-            branch 'master'
-          }
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            milestone(1)
-            script {
-              helmDeploy('dev', [image: image])
+            stage('Helm dry run') {
+              when {
+                not {
+                  branch 'master'
+                }
+              }
+              steps {
+                script {
+                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                    helmDeploy('dev', [image: image, dryRun: true])
+                  }
+                }
+              }
+            }
+            stage('Deploy to dev') {
+              when {
+                branch 'master'
+              }
+              steps {
+                milestone(5)
+                script {
+                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                    helmDeploy('dev', [image: image])
+                  }
+                }
+                milestone(6)
+              }
             }
           }
         }
@@ -113,9 +119,14 @@ pipeline {
             label 'jenkins-docker-3'
           }
           steps {
-            milestone(10)
-            script {
-              helmDeploy('test', [image: image])
+            lock(resource: null, label: 'test-deploy') {
+              milestone(10)
+              script {
+                ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                  checkout scm
+                  helmDeploy('test', [image: image])
+                }
+              }
             }
           }
         }
@@ -138,17 +149,15 @@ pipeline {
             label 'jenkins-docker-3'
           }
           steps {
-            milestone(20)
-            script {
-              helmDeploy('prod', [image: image])
+            lock(resource: null, label: 'prod-deploy') {
+              milestone(20)
+              script {
+                ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                  checkout scm
+                  helmDeploy('prod', [image: image])
+                }
+              }
             }
-          }
-        }
-    }
-    post {
-        always {
-           node('jenkins-docker-3') {
-            step([$class: 'WsCleanup'])
           }
         }
     }
