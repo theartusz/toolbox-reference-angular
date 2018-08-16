@@ -14,9 +14,6 @@ pipeline {
               label 'jenkins-docker-3'
             }
           }
-          options {
-            lock('build-lock')
-          }
           stages {
             stage('Install libraries') {
               steps {
@@ -119,13 +116,11 @@ pipeline {
             label 'jenkins-docker-3'
           }
           steps {
-            lock(resource: null, label: 'test-deploy') {
-              milestone(10)
-              script {
-                ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                  checkout scm
-                  helmDeploy('test', [image: image])
-                }
+            milestone(10)
+            script {
+              ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                checkout scm
+                helmDeploy('test', [image: image])
               }
             }
           }
@@ -149,16 +144,23 @@ pipeline {
             label 'jenkins-docker-3'
           }
           steps {
-            lock(resource: null, label: 'prod-deploy') {
-              milestone(20)
-              script {
-                ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                  checkout scm
-                  helmDeploy('prod', [image: image])
-                }
+            milestone(20)
+            script {
+              ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+                checkout scm
+                helmDeploy('prod', [image: image])
               }
             }
           }
         }
+    }
+    post {
+      always {
+        node('jenkins-docker-3') {
+          ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
+            step([$class: 'WsCleanup'])
+          }
+        }
+      }
     }
 }
