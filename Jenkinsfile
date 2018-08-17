@@ -158,7 +158,7 @@ pipeline {
       always {
         node('jenkins-docker-3') {
           ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-            deleteDir()
+            step([$class: 'WsCleanup'])
           }
         }
       }
