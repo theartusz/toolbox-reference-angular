@@ -111,6 +111,7 @@ pipeline {
         stage('Deploy to test') {
           when {
             branch 'master'
+            beforeAgent true
           }
           agent {
             label 'jenkins-docker-3'
@@ -139,6 +140,7 @@ pipeline {
         stage('Deploy to prod') {
           when {
             branch 'master'
+            beforeAgent true
           }
           agent {
             label 'jenkins-docker-3'
