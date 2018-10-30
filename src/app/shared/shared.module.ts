@@ -1,11 +1,7 @@
 import { NgModule, HttpClientModule, RouterModule, CommonModule, HTTP_INTERCEPTORS } from 'vendor/angular';
-import { MomentModule } from 'angular2-moment';
 
 // spinner
 import { SpinnerDirective } from 'app/shared/spinner/spinner.directive';
-
-// pipes
-import { DatexPipe } from 'app/shared/pipes/datex.pipe';
 
 // services
 import { SpinnerService } from 'app/shared/spinner/spinner.service';
@@ -20,17 +16,14 @@ import { HttpInterceptorHandler } from './interceptor/HttpInterceptorHandler';
     HttpClientModule,
     CommonModule,
     RouterModule,
-    MomentModule,
   ],
   declarations: [
-    DatexPipe,
     SpinnerDirective,
   ],
   exports: [
     HttpClientModule,
     CommonModule,
     RouterModule,
-    DatexPipe,
     SpinnerDirective,
   ],
   providers: [

@@ -1,5 +1,3 @@
-export { DatexPipe } from 'app/shared/pipes/datex.pipe';
-
 // services
 export { SpinnerService } from 'app/shared/spinner/spinner.service';
 export { ExampleService } from 'app/shared/utility/example.service';

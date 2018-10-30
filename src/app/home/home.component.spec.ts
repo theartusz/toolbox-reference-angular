@@ -10,7 +10,6 @@ import { GreeterComponent } from 'app/home/shared/greeter/greeter.component';
 import { ExampleService } from 'app/shared/utility/example.service';
 
 // pipe
-import { DatexPipe } from 'app/shared/pipes/datex.pipe';
 
 describe('HomeComponent', () => {
 
@@ -25,7 +24,6 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
         GreeterComponent,
-        DatexPipe,
       ],
       imports: [
         RouterTestingModule,
