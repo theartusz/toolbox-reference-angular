@@ -21,9 +21,10 @@ pipeline {
                 script {
                   ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
                     checkout scm
-                    def testbed = docker.image('node:8')
+                    def testbed = docker.image('node:10')
                     testbed.inside(){
                       sh "npm install"
+                      sh "npm audit"
                     }
                   }
                 }
@@ -33,7 +34,7 @@ pipeline {
               steps {
                 script {
                   ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    def testbed = docker.image('node:8')
+                    def testbed = docker.image('node:10')
                     testbed.inside(){
                       sh "npm run build"
                       sh "npm run citest"
