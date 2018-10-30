@@ -6,8 +6,8 @@ import { TableComponent } from 'app/responsive_table/table.component';
 const RESPONSIVETABLE_ROUTES: Routes = [
   {
     path: 'table',
-    component: TableComponent
-  }
+    component: TableComponent,
+  },
 ];
 
 export let TableRouterModule = RouterModule.forChild(RESPONSIVETABLE_ROUTES);

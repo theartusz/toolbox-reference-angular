@@ -8,8 +8,8 @@ import { HomeComponent } from 'app/home/home.component';
 const HOME_ROUTES: Routes = [
   {
     path: '',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];
 
 export let HomeRouterModule = RouterModule.forRoot(HOME_ROUTES);

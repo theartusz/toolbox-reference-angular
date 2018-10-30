@@ -7,12 +7,12 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
       ],
       imports: [
         RouterTestingModule,
-        TranslateModule.forRoot()
-      ]
+        TranslateModule.forRoot(),
+      ],
     }).compileComponents();
   }));
 

@@ -7,7 +7,7 @@ import { ExampleService } from 'app/shared/utility/example.service';
 @Component({
   selector: 'boilerplate-greeter',
   templateUrl: 'greeter.component.html',
-  styleUrls: ['./shared/greeter.component.scss']
+  styleUrls: ['./shared/greeter.component.scss'],
 })
 export class GreeterComponent implements OnInit {
 

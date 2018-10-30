@@ -2,7 +2,7 @@
 
 import {
   TestBed, async, RouterTestingModule, FormsModule, ReactiveFormsModule,
-  NO_ERRORS_SCHEMA, RouterModule
+  NO_ERRORS_SCHEMA, RouterModule,
 } from 'vendor/angular';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -18,7 +18,7 @@ describe('FormGroupComponent', () => {
     /** Setting up testing */
     TestBed.configureTestingModule({
       declarations: [
-        FormGroupComponent
+        FormGroupComponent,
       ],
       imports: [
         RouterModule,
@@ -26,16 +26,16 @@ describe('FormGroupComponent', () => {
         SharedModule,
         FormsModule,
         ReactiveFormsModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
       ],
       providers: [
         [
           ValidatorService,                // No backend service, only validation. Therefore no mocking of object.
-        ]
+        ],
       ],
       schemas: [
-        [NO_ERRORS_SCHEMA]
-      ]
+        [NO_ERRORS_SCHEMA],
+      ],
     });
     TestBed.compileComponents();
   });

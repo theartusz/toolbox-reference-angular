@@ -12,13 +12,13 @@ describe('AdminComponent test', () => {
 
     TestBed.configureTestingModule({
       declarations: [
-        ErrorComponent
+        ErrorComponent,
       ],
       imports: [
         RouterTestingModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
       ],
-      providers: []
+      providers: [],
     }).compileComponents();
   }));
 

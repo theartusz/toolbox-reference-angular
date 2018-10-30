@@ -25,15 +25,15 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
         GreeterComponent,
-        DatexPipe
+        DatexPipe,
       ],
       imports: [
         RouterTestingModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
       ],
       providers: [
-        [{ provide: ExampleService, useClass: ExampleServiceStub }]
-      ]
+        [{ provide: ExampleService, useClass: ExampleServiceStub }],
+      ],
     }).compileComponents();
   }));
 

@@ -21,11 +21,11 @@ import { FormGroupComponent } from 'app/form-group/form-group.component';
     FormGroupRouterModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [],
   declarations: [
-    FormGroupComponent
+    FormGroupComponent,
   ],
   providers: [],
 })

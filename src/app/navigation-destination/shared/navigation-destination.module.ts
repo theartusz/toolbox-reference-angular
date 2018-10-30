@@ -17,11 +17,11 @@ import { NavigationDestinationComponent } from 'app/navigation-destination/navig
   imports: [
     TranslateModule,
     NavigateDestinationRouterModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [],
   declarations: [
-    NavigationDestinationComponent
+    NavigationDestinationComponent,
   ],
   providers: [],
 })

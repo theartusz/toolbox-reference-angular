@@ -6,7 +6,7 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatNativeDateModule,
-  MatInputModule
+  MatInputModule,
 } from 'vendor/material';
 
 // component
@@ -18,7 +18,7 @@ import { SharedModule } from 'app/shared/shared.module';
 
 @NgModule({
   declarations: [
-    GoogleMaterialComponent
+    GoogleMaterialComponent,
   ],
   imports: [
     SharedModule,
@@ -32,13 +32,13 @@ import { SharedModule } from 'app/shared/shared.module';
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   exports: [
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'no-NO' }  // changes the format for the calender to norwegian (en-GB, changes it to english)
-  ]
+    { provide: MAT_DATE_LOCALE, useValue: 'no-NO' },  // changes the format for the calender to norwegian (en-GB, changes it to english)
+  ],
 })
 
 export class GoogleMaterialModule { }

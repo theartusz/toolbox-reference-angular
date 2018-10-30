@@ -9,12 +9,12 @@ import { HomeComponent } from 'app/home/home.component';
 const APP_ROUTES: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: '**',
-    redirectTo: '404'
-  }
+    redirectTo: '404',
+  },
 
 ];
 

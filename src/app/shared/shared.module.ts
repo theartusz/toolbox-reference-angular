@@ -20,18 +20,18 @@ import { HttpInterceptorHandler } from './interceptor/HttpInterceptorHandler';
     HttpClientModule,
     CommonModule,
     RouterModule,
-    MomentModule
+    MomentModule,
   ],
   declarations: [
     DatexPipe,
-    SpinnerDirective
+    SpinnerDirective,
   ],
   exports: [
     HttpClientModule,
     CommonModule,
     RouterModule,
     DatexPipe,
-    SpinnerDirective
+    SpinnerDirective,
   ],
   providers: [
     SpinnerService,
@@ -41,8 +41,8 @@ import { HttpInterceptorHandler } from './interceptor/HttpInterceptorHandler';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorHandler,
       multi: true,
-    }
-  ]
+    },
+  ],
 })
 
 export class SharedModule {

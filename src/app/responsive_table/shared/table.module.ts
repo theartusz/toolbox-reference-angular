@@ -16,11 +16,11 @@ import { TableComponent } from 'app/responsive_table/table.component';
   imports: [
     TranslateModule,
     TableRouterModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [],
   declarations: [
-    TableComponent
+    TableComponent,
   ],
   providers: [],
 })

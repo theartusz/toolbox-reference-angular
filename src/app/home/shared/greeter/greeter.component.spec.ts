@@ -13,15 +13,15 @@ describe('HomeComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [
-        GreeterComponent
+        GreeterComponent,
       ],
       imports: [
         RouterTestingModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
       ],
       providers: [
-        ExampleService
-      ]
+        ExampleService,
+      ],
     }).compileComponents();
   }));
 

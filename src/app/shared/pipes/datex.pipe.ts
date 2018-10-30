@@ -11,7 +11,7 @@ import { Pipe, PipeTransform } from 'vendor/angular';
 import * as moment from 'moment';
 
 @Pipe({
-  name: 'datex'
+  name: 'datex',
 })
 
 export class DatexPipe implements PipeTransform {

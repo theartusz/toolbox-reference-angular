@@ -4,8 +4,8 @@ import { NavigationDestinationComponent } from 'app/navigation-destination/navig
 const NAVIGATE_ROUTES: Routes = [
   {
     path: 'navigate',
-    component: NavigationDestinationComponent
-  }
+    component: NavigationDestinationComponent,
+  },
 ];
 
 export let NavigateDestinationRouterModule = RouterModule.forChild(NAVIGATE_ROUTES);

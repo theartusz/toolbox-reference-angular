@@ -7,7 +7,7 @@ import { ValidatorService } from 'app/shared/utility/validation.service';
 @Component({
   selector: 'boilerplate-form-group',
   templateUrl: 'form-group.component.html',
-  styleUrls: ['./form-group.component.scss']
+  styleUrls: ['./form-group.component.scss'],
 })
 export class FormGroupComponent implements OnInit {
   exampleForm: FormGroup;
@@ -35,15 +35,15 @@ export class FormGroupComponent implements OnInit {
       repeatPassword: ['', Validators.required],
       domain: ['', Validators.required],
       url: ['', Validators.required],
-      input_label: ['', Validators.required]
+      input_label: ['', Validators.required],
     }, {
-        validator: this.validationService.matchPassword // your validation method
+        validator: this.validationService.matchPassword, // your validation method
       });
 
     this.dropdownExample = [
       this.translate.instant('form.dropdown.exampleOne'),
       this.translate.instant('form.dropdown.exampleTwo'),
-      this.translate.instant('form.dropdown.exampleThree')
+      this.translate.instant('form.dropdown.exampleThree'),
     ];
   }
 

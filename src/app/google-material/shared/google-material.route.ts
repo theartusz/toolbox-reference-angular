@@ -7,8 +7,8 @@ import { GoogleMaterialComponent } from 'app/google-material/google-material.com
 const GOOGLEMATERIAL_ROUTES: Routes = [
   {
     path: 'material',
-    component: GoogleMaterialComponent
-  }
+    component: GoogleMaterialComponent,
+  },
 ];
 
 export let GoogleMaterialRouterModule = RouterModule.forRoot(GOOGLEMATERIAL_ROUTES);

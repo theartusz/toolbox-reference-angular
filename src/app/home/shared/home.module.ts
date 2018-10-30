@@ -16,12 +16,12 @@ import { SharedModule } from 'app/shared/shared.module';
   imports: [
     TranslateModule,
     SharedModule,
-    HomeRouterModule
+    HomeRouterModule,
   ],
   exports: [],
   declarations: [
     HomeComponent,
-    GreeterComponent
+    GreeterComponent,
   ],
   providers: [],
 })
