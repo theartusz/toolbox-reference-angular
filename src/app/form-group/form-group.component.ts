@@ -1,8 +1,9 @@
-import { Component, OnInit, FormBuilder, FormGroup, Validators, NgForm } from 'vendor/angular';
 
 // services
 import { TranslateService } from '@ngx-translate/core';
 import { ValidatorService } from 'app/shared/utility/validation.service';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 
 @Component({
   selector: 'boilerplate-form-group',

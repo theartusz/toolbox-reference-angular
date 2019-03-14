@@ -1,9 +1,3 @@
-/**
- * Created by orjanertkjern on 21/08/2017.
- */
-
-import { NgModule } from 'vendor/angular';
-
 // modules
 import { SharedModule } from 'app/shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,6 +6,7 @@ import { NavigateDestinationRouterModule } from 'app/navigation-destination/shar
 // component
 
 import { NavigationDestinationComponent } from 'app/navigation-destination/navigation-destination.component';
+import {NgModule} from '@angular/core';
 
 @NgModule({
   imports: [

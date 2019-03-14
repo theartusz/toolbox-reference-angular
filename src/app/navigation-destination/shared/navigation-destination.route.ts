@@ -1,5 +1,5 @@
-import { Routes, RouterModule } from 'vendor/angular';
 import { NavigationDestinationComponent } from 'app/navigation-destination/navigation-destination.component';
+import {RouterModule, Routes} from '@angular/router';
 
 const NAVIGATE_ROUTES: Routes = [
   {

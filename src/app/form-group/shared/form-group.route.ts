@@ -1,9 +1,5 @@
-
-import { Routes, RouterModule } from 'vendor/angular';
-
-
-// Component
 import { FormGroupComponent } from 'app/form-group/form-group.component';
+import {RouterModule, Routes} from '@angular/router';
 
 const FORMGROUP_ROUTES: Routes = [
   {

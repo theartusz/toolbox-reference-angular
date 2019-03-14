@@ -1,14 +1,15 @@
 /* tslint:disable:no-unused-variable */
 
-import {
-  TestBed, async, RouterTestingModule, FormsModule, ReactiveFormsModule,
-  NO_ERRORS_SCHEMA, RouterModule,
-} from 'vendor/angular';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { FormGroupComponent } from 'app/form-group/form-group.component';
 import { ValidatorService } from 'app/shared/utility/validation.service';
 import { SharedModule } from 'app/shared/shared.module';
+import {async, TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 
 

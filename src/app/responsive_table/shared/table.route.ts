@@ -1,6 +1,6 @@
-import { Routes, RouterModule } from 'vendor/angular';
 // Component
 import { TableComponent } from 'app/responsive_table/table.component';
+import {RouterModule, Routes} from '@angular/router';
 
 
 const RESPONSIVETABLE_ROUTES: Routes = [

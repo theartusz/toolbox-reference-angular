@@ -1,9 +1,5 @@
-/**
- * created by lenewhiteley on 12/02/2018.
- */
-
-import { Component } from 'vendor/angular';
-import { MatDatepickerInputEvent } from 'vendor/material';
+import {Component} from '@angular/core';
+import {MatDatepickerInputEvent} from '@angular/material';
 
 @Component({
   selector: 'boilerplate-google-material',

@@ -1,20 +1,18 @@
-import { NgModule } from 'vendor/angular';
+import {GoogleMaterialComponent} from 'app/google-material/google-material.component';
+// modules
+import {TranslateModule} from '@ngx-translate/core';
+import {GoogleMaterialRouterModule} from 'app/google-material/shared/google-material.route';
+import {SharedModule} from 'app/shared/shared.module';
+import {NgModule} from '@angular/core';
 import {
   MAT_DATE_LOCALE,
-  MatDatepickerModule,
-  MatFormFieldModule,
   MatButtonModule,
   MatCheckboxModule,
-  MatNativeDateModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
   MatInputModule,
-} from 'vendor/material';
-
-// component
-import { GoogleMaterialComponent } from 'app/google-material/google-material.component';
-// modules
-import { TranslateModule } from '@ngx-translate/core';
-import { GoogleMaterialRouterModule } from 'app/google-material/shared/google-material.route';
-import { SharedModule } from 'app/shared/shared.module';
+  MatNativeDateModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
-import { Injectable } from 'vendor/angular';
-import { BehaviorSubject } from 'vendor/rxJs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class SpinnerService {

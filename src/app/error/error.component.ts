@@ -1,4 +1,4 @@
-import { Component, OnInit } from 'vendor/angular';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'boilerplate-error',
