@@ -11,7 +11,7 @@ import {
   MatDatepickerModule,
   MatFormFieldModule,
   MatInputModule,
-  MatNativeDateModule
+  MatNativeDateModule,
 } from '@angular/material';
 
 @NgModule({
