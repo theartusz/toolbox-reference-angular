@@ -26,6 +26,7 @@ pipeline {
                       sh "npm ci"
                       sh "npm audit"
                       sh "npm run license-checker"
+                      sh "npm run lint"
                     }
                   }
                 }
