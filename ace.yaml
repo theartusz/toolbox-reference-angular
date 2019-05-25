@@ -28,17 +28,17 @@ environments:
       ingress:
         host: toolbox-reference-angular.dev.evry.site
   test:
-    cluster: kubernetes.ace.dev
+    cluster: kubernetes.maze-test
     namespace: toolbox-test
     overrides:
       ingress:
-        host: toolbox-reference-angular.test.evry.site
+        host: toolbox-reference-angular.maze-test.evry.site
   prod:
-    cluster: kubernetes.ace.prod
+    cluster: kubernetes.maze-prod
     namespace: toolbox-prod
     overrides:
       ingress:
-        host: toolbox-reference-angular.prod.evry.site
+        host: toolbox-reference-angular.maze-prod.evry.site
 
 
 
