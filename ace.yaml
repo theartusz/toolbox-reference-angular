@@ -22,11 +22,11 @@ common:
 
 environments:
   dev:
-    cluster: kubernetes.ace.dev
+    cluster: kubernetes.maze-test
     namespace: toolbox-dev
     overrides:
       ingress:
-        host: toolbox-reference-angular.dev.evry.site
+        host: toolbox-reference-angular.maze-dev.evry.site
   test:
     cluster: kubernetes.maze-test
     namespace: toolbox-test
