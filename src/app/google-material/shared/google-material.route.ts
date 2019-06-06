@@ -1,8 +1,6 @@
-import { Routes, RouterModule } from 'vendor/angular';
-
-
 // Component
 import { GoogleMaterialComponent } from 'app/google-material/google-material.component';
+import {RouterModule, Routes} from '@angular/router';
 
 const GOOGLEMATERIAL_ROUTES: Routes = [
   {

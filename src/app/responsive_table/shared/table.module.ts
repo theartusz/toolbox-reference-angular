@@ -1,9 +1,3 @@
-/**
- * Created by lenewhiteley on 19/02/2018.
- */
-
-import { NgModule } from 'vendor/angular';
-
 // modules
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from 'app/shared/shared.module';
@@ -11,6 +5,7 @@ import { TableRouterModule } from 'app/responsive_table/shared/table.route';
 
 // component
 import { TableComponent } from 'app/responsive_table/table.component';
+import {NgModule} from '@angular/core';
 
 @NgModule({
   imports: [

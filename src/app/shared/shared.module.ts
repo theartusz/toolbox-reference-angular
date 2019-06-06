@@ -1,5 +1,3 @@
-import { NgModule, HttpClientModule, RouterModule, CommonModule, HTTP_INTERCEPTORS } from 'vendor/angular';
-
 // spinner
 import { SpinnerDirective } from 'app/shared/spinner/spinner.directive';
 
@@ -8,6 +6,10 @@ import { SpinnerService } from 'app/shared/spinner/spinner.service';
 import { ValidatorService } from 'app/shared/utility/validation.service';
 import { ExampleService } from 'app/shared/utility/example.service';
 import { HttpInterceptorHandler } from './interceptor/HttpInterceptorHandler';
+import {NgModule} from '@angular/core';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 
 

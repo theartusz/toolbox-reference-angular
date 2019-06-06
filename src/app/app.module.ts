@@ -1,21 +1,20 @@
-import { NgModule, BrowserAnimationsModule, HttpClient } from 'vendor/angular';
-
 // app component
-import { AppComponent } from './app.component';
-
+import {AppComponent} from './app.component';
 // Module
-import { SharedModule } from 'app/shared/index.shared';
-import { AppRouterModule } from 'app/app.routes';
-import { HomeModule } from 'app/home/index.home';
-import { ErrorModule } from 'app/error/index.error';
-import { FormGroupModule } from 'app/form-group/index.form-group';
-import { GoogleMaterialModule } from 'app/google-material/index.material';
-import { TableModule } from 'app/responsive_table/index.responsive';
-import { NavigationDestinationModule } from 'app/navigation-destination/index.navigation';
-
+import {SharedModule} from 'app/shared/index.shared';
+import {AppRouterModule} from 'app/app.routes';
+import {HomeModule} from 'app/home/index.home';
+import {ErrorModule} from 'app/error/index.error';
+import {FormGroupModule} from 'app/form-group/index.form-group';
+import {GoogleMaterialModule} from 'app/google-material/index.material';
+import {TableModule} from 'app/responsive_table/index.responsive';
+import {NavigationDestinationModule} from 'app/navigation-destination/index.navigation';
 // translation
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // create loader for translation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -49,4 +48,5 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent],
 })
 
-export class AppModule { }
+export class AppModule {
+}

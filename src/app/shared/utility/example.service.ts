@@ -1,7 +1,5 @@
-
-import {of as observableOf} from 'rxjs';
-import { Injectable } from 'vendor/angular';
-import { Observable } from 'vendor/rxJs';
+import {Observable, of} from 'rxjs';
+import {Injectable} from '@angular/core';
 
 
 @Injectable()
@@ -11,6 +9,6 @@ export class ExampleService {
   }
 
   serviceExampleFunction(): Observable<boolean> {
-    return observableOf(true);
+    return of(true);
   }
 }

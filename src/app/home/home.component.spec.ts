@@ -1,5 +1,3 @@
-import { TestBed, async, RouterTestingModule } from 'vendor/angular';
-import { Observable, observableOf } from 'vendor/rxJs';
 import { TranslateModule } from '@ngx-translate/core';
 
 // components
@@ -8,6 +6,9 @@ import { GreeterComponent } from 'app/home/shared/greeter/greeter.component';
 
 // services
 import { ExampleService } from 'app/shared/utility/example.service';
+import {Observable, of} from 'rxjs';
+import {async, TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
 // pipe
 
@@ -15,7 +16,7 @@ describe('HomeComponent', () => {
 
   class ExampleServiceStub {
     serviceExampleFunction(): Observable<boolean> {
-      return observableOf(true);
+      return of(true);
     }
   }
 

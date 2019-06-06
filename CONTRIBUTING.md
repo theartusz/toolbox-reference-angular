@@ -2,7 +2,7 @@
 
 ### About the project
 
-The following project should allways be up to date with the newset stable features.
+The following project should allways be up to date with the newest stable features.
 
 If you find any npm packages or dependencies that are not up to date a reported Issue, or even better a Pull Request linked to an issue, should be created. 
 

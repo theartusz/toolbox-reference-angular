@@ -1,8 +1,5 @@
-/**
- * Created by orjanertkjern on 21/08/2017.
- */
-import { Component, Input, OnInit } from 'vendor/angular';
 import { ExampleService } from 'app/shared/utility/example.service';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'boilerplate-greeter',

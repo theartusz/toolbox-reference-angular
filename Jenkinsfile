@@ -23,9 +23,10 @@ pipeline {
                     checkout scm
                     def testbed = docker.image('node:10')
                     testbed.inside(){
-                      sh "npm install"
+                      sh "npm ci"
                       sh "npm audit"
                       sh "npm run license-checker"
+                      sh "npm run lint"
                     }
                   }
                 }

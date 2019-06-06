@@ -1,5 +1,5 @@
-import { Component } from 'vendor/angular';
 import { TranslateService } from '@ngx-translate/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'boilerplate-app-root',

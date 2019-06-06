@@ -1,6 +1,3 @@
-import {Injectable, FormControl, AbstractControl} from 'vendor/angular';
-
-
 /**
  *
  * Service for handeling custom validation.
@@ -8,6 +5,9 @@ import {Injectable, FormControl, AbstractControl} from 'vendor/angular';
  * @author Ørjan Ertkjern
  *
  */
+import {Injectable} from '@angular/core';
+import {AbstractControl, FormControl} from '@angular/forms';
+
 @Injectable()
 export class ValidatorService {
 
@@ -123,7 +123,8 @@ export class ValidatorService {
   }
 
   matchPassword(AC: AbstractControl) {
-    const password = AC.get('password').value;
+    const password = AC.get('p' +
+      'assword').value;
     const confirmPassword = AC.get('repeatPassword').value;
     if (password !== confirmPassword) {
       return {'missmatchPassword': true};
@@ -131,7 +132,6 @@ export class ValidatorService {
       return null;
     }
   }
-
 
 
 }
