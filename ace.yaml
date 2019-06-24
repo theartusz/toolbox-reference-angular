@@ -34,7 +34,8 @@ environments:
         enabled: false
       ingress:
         enabled: true
-        host: toolbox-reference-angular.dev.maze.evry.site
+        hosts:
+          - toolbox-reference-angular.dev.maze.evry.site
       cert:
         enabled: true
   test:
@@ -45,7 +46,8 @@ environments:
         enabled: false
       ingress:
         enabled: true
-        host: toolbox-reference-angular.test.maze.evry.site
+        hosts:
+          - toolbox-reference-angular.test.maze.evry.site
       cert:
         enabled: true
   prod:
@@ -56,6 +58,7 @@ environments:
         enabled: false
       ingress:
         enabled: true
-        host: toolbox-reference-angular.prod.maze.evry.site
+        hosts:
+          - toolbox-reference-angular.prod.maze.evry.site
       cert:
         enabled: true
