@@ -36,6 +36,10 @@ environments:
         enabled: true
         hosts:
           - toolbox-reference-angular.dev.maze.evry.site
+        tls:
+          - hosts:
+            - toolbox-reference-angular.dev.maze.evry.site
+            secretName: toolbox-reference-angular-dev
       cert:
         enabled: true
   test:
@@ -48,6 +52,10 @@ environments:
         enabled: true
         hosts:
           - toolbox-reference-angular.test.maze.evry.site
+        tls:
+          - hosts:
+            - toolbox-reference-angular.test.maze.evry.site
+            secretName: toolbox-reference-angular-test
       cert:
         enabled: true
   prod:
@@ -60,5 +68,9 @@ environments:
         enabled: true
         hosts:
           - toolbox-reference-angular.prod.maze.evry.site
+        tls:
+          - hosts:
+            - toolbox-reference-angular.prod.maze.evry.site
+            secretName: toolbox-reference-angular-prod
       cert:
         enabled: true
