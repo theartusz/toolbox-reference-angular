@@ -9,6 +9,9 @@ opts = [
   buildAgent: 'jenkins-docker-3',
 ]
 
+// Hack to prevent ace function from being overloaded during test-deploy
+def ace = ace
+
 ace(opts) {
   def args = [
     "-v ${pwd()}:/src",
