@@ -19,7 +19,7 @@ ace(opts) {
 
   String nodeVersion = "node:carbon"
 
-  #NB: Project must use their own name or they will run in sequence with this build (and others)
+  //NB: Project must use their own name or they will run in sequence with this build (and others)
   lock(resource: 'npm_tests_angular_reference', inversePrecedence: true){
     stage('npm tests') {
       checkout scm
@@ -35,7 +35,7 @@ ace(opts) {
     milestone()
   }
 
-  #NB: Project must use their own name or they will run in sequence with this build (and others)
+  //NB: Project must use their own name or they will run in sequence with this build (and others)
   lock(resource: 'npm_build_angular-reference', inversePrecedence: true){
     stage('npm build') {
 
