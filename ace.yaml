@@ -30,18 +30,24 @@ environments:
     cluster: kubernetes.maze-test
     namespace: toolbox-dev
     values:
+      metrics:
+        enabled: false
       ingress:
         host: toolbox-reference-angular.dev.maze.evry.site
   test:
     cluster: kubernetes.maze-test
     namespace: toolbox-test
-    overrides:
+    values:
+      metrics:
+        enabled: false
       ingress:
         host: toolbox-reference-angular.test.maze.evry.site
   prod:
     cluster: kubernetes.maze-prod
     namespace: toolbox-prod
-    overrides:
+    values:
+      metrics:
+        enabled: false
       ingress:
         host: toolbox-reference-angular.prod.maze.evry.site
 
