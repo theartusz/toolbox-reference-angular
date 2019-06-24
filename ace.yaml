@@ -33,7 +33,10 @@ environments:
       metrics:
         enabled: false
       ingress:
+        enabled: true
         host: toolbox-reference-angular.dev.maze.evry.site
+      cert:
+        enabled: true
   test:
     cluster: kubernetes.maze-test
     namespace: toolbox-test
@@ -41,7 +44,10 @@ environments:
       metrics:
         enabled: false
       ingress:
+        enabled: true
         host: toolbox-reference-angular.test.maze.evry.site
+      cert:
+        enabled: true
   prod:
     cluster: kubernetes.maze-prod
     namespace: toolbox-prod
@@ -49,8 +55,7 @@ environments:
       metrics:
         enabled: false
       ingress:
+        enabled: true
         host: toolbox-reference-angular.prod.maze.evry.site
-
-
-
-
+      cert:
+        enabled: true
