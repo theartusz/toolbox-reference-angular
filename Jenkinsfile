@@ -1,8 +1,6 @@
 #!groovy
 @Library("ace") _
 
-properties([disableConcurrentBuilds()])
-
 Boolean isMaster = "${env.BRANCH_NAME}" == 'master'
 
 opts = [
@@ -94,4 +92,3 @@ if (isMaster) {
     }
   }
 }
-
