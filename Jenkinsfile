@@ -57,6 +57,16 @@ ace(opts) {
       slack.notifySuccessful()
     }
   }
+
+  stage('Deploy to test') {
+    deploy('test', [dryrun: isMaster == false])
+
+    if (isMaster) {
+      slack.notifyDeploy('dev')
+    } else {
+      slack.notifySuccessful()
+    }
+  }
 }
 
 if (isMaster) {
