@@ -1,172 +1,69 @@
-@Library('utils')
-import no.evry.Docker
+#!groovy
+@Library("ace") _
 
-pipeline {
-    agent none
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '5'))
-        skipDefaultCheckout()
+properties([disableConcurrentBuilds()])
+
+Boolean isMaster = "${env.BRANCH_NAME}" == 'master'
+
+opts = [
+  buildAgent: 'jenkins-docker-3',
+]
+
+ace(opts) {
+  def args = [
+    "-v ${pwd()}:/src",
+    "-w /src",
+    "-e npm_config_cache=.npm"
+  ].join(" ")
+
+  String nodeVersion = "node:carbon"
+
+  stage('npm tests') {
+    checkout scm
+    def testbed = docker.image(nodeVersion)
+    testbed.inside(args) {
+      sh "npm ci"
+      sh "npm audit"
+      sh "npm run license-checker"
+      sh "npm run lint"
+      sh "npm run citest"
     }
-    stages {
-        stage('Build and test') {
-          agent {
-            node {
-              label 'jenkins-docker-3'
-            }
-          }
-          stages {
-            stage('Install libraries') {
-              steps {
-                milestone(1)
-                script {
-                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    checkout scm
-                    def testbed = docker.image('node:10')
-                    testbed.inside(){
-                      sh "npm ci"
-                      sh "npm audit"
-                      sh "npm run license-checker"
-                      sh "npm run lint"
-                    }
-                  }
-                }
-              }
-            }
-            stage('Build client') {
-              steps {
-                script {
-                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    def testbed = docker.image('node:10')
-                    testbed.inside(){
-                      sh "npm run license-checker"
-                      sh "npm run build"
-                      sh "npm run citest"
-                    }
-                  }
-                }
-              }
-            }
-            stage('Build docker') {
-              steps {
-                script {
-                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    image = new Docker(this, [nameOnly: true]).image('evrydevopsprod.azurecr.io')
-                    sh "docker build . -t " + image
-                  }
-                }
-              }
-            }
-            stage('Push docker') {
-              when {
-                branch 'master'
-              }
-              steps {
-                script {
-                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    withDockerRegistry([ credentialsId: "evrydevopsprod.azurecr.io", url: "https://evrydevopsprod.azurecr.io" ]) {
-                      sh "docker push " + image
-                    }
-                  }
-                }
-              }
-            }
+  }
 
-            stage('Helm dry run') {
-              when {
-                not {
-                  branch 'master'
-                }
-              }
-              steps {
-                script {
-                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    helmDeploy('dev', [image: image, dryRun: true])
-                  }
-                }
-              }
-            }
-            stage('Deploy to dev') {
-              when {
-                branch 'master'
-              }
-              steps {
-                milestone(5)
-                script {
-                  ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                    helmDeploy('dev', [image: image])
-                  }
-                }
-                milestone(6)
-              }
-            }
-          }
-        }
-
-        stage("Deploy to test?") {
-          when {
-            branch 'master'
-          }
-          agent none
-          steps {
-            input message: 'Deploy to test?'
-          }
-        }
-
-        stage('Deploy to test') {
-          when {
-            branch 'master'
-            beforeAgent true
-          }
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            milestone(10)
-            script {
-              ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                checkout scm
-                helmDeploy('test', [image: image])
-              }
-            }
-          }
-        }
-
-        stage("Deploy to prod?") {
-          when {
-            branch 'master'
-          }
-          agent none
-          steps {
-            input message: 'Deploy to prod?'
-          }
-        }
-
-        stage('Deploy to prod') {
-          when {
-            branch 'master'
-            beforeAgent true
-          }
-          agent {
-            label 'jenkins-docker-3'
-          }
-          steps {
-            milestone(20)
-            script {
-              ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-                checkout scm
-                helmDeploy('prod', [image: image])
-              }
-            }
-          }
-        }
+  stage('npm build') {
+    def testbed = docker.image(nodeVersion)
+    testbed.inside(args) {
+      sh "npm run build"
     }
-    post {
-      always {
-        node('jenkins-docker-3') {
-          ws("${env.WORKSPACE}/${env.BUILD_NUMBER}") {
-            step([$class: 'WsCleanup'])
-          }
-        }
-      }
+  }
+
+  stage('docker build') {
+    dockerBuild()
+  }
+
+  stage('docker push') {
+    dockerPush("dev")
+  }
+
+  stage('Deploy to dev') {
+    deploy('dev', [dryrun: isMaster == false])
+
+    if (isMaster) {
+      slack.notifyDeploy('dev')
+    } else {
+      slack.notifySuccessful()
     }
+  }
 }
+
+if (isMaster) {
+  waitForInput("Deploy to prod?")
+
+  ace(opts) {
+    stage('Deploy to prod') {
+      deploy("prod")
+      slack.notifyDeploy('prod')
+    }
+  }
+}
+
