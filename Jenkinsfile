@@ -21,34 +21,46 @@ ace(opts) {
 
   String nodeVersion = "node:carbon"
 
-  stage('npm tests') {
-    checkout scm
-    def testbed = docker.image(nodeVersion)
-    testbed.inside(args) {
-      sh "npm ci"
-      sh "npm audit"
-      sh "npm run license-checker"
-      sh "npm run lint"
-      sh "npm run citest"
+  lock(resource: 'npm_tests_angular_reference', inversePrecedence: true){
+    stage('npm tests') {
+      checkout scm
+      def testbed = docker.image(nodeVersion)
+      testbed.inside(args) {
+        sh "npm ci"
+        sh "npm audit"
+        sh "npm run license-checker"
+        sh "npm run lint"
+        sh "npm run citest"
+      }
     }
+    milestone()
   }
 
-  stage('npm build') {
-    def testbed = docker.image(nodeVersion)
-    testbed.inside(args) {
-      sh "npm run build"
+  lock(resource: 'npm_build_angular-reference', inversePrecedence: true){
+    stage('npm build') {
+
+      def testbed = docker.image(nodeVersion)
+      testbed.inside(args) {
+        sh "npm run build"
+      }
     }
+    milestone()
   }
 
   stage('docker build') {
+    milestone()
     dockerBuild()
   }
 
   stage('docker push') {
-    dockerPush("dev")
+    milestone()
+    if (isMaster) {
+      dockerPush("dev")
+    }
   }
 
   stage('Deploy to dev') {
+    milestone()
     deploy('dev', [dryrun: isMaster == false])
 
     if (isMaster) {
@@ -59,6 +71,7 @@ ace(opts) {
   }
 
   stage('Deploy to test') {
+    milestone()
     deploy('test', [dryrun: isMaster == false])
 
     if (isMaster) {
@@ -70,7 +83,9 @@ ace(opts) {
 }
 
 if (isMaster) {
+  milestone()
   waitForInput("Deploy to prod?")
+  milestone()
 
   ace(opts) {
     stage('Deploy to prod') {
