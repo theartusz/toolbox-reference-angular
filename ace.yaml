@@ -24,7 +24,10 @@ helm:
       targetPort: 80
     metrics:
       enabled: false
-
+    podDisruptionBudget:
+      minAvailable: 1
+    replicaCount: 3      
+      
 environments:
   dev:
     cluster: kubernetes.maze-test
