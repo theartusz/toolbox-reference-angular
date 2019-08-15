@@ -84,8 +84,6 @@ the ```h1``` elements contains an *ngIf.
 A HTTP Interceptor is created as an reference. If you ever need to log based on status, or have to handle HTTP requests/response etc.
 somehow. This is the way to go. 
 
-## TSLint 
-
 ## External Modules
 
 In the project a few external modules that we use frequently has been imported into the project, to show how to use them. 
@@ -96,12 +94,6 @@ They are all implemented and used in the project.
 ### @ngx-translate
 
 https://github.com/ngx-translate
-
-### Bootstrap 4
-
-The project is using Bootstrap 4, which is still in test phase but is considered pretty stable by the community. 
-
-https://v4-alpha.getbootstrap.com/
 
 ## Testing 
 
