@@ -20,10 +20,10 @@ The relevant files will then be imported, created and imported in the correct mo
 * [Installation](#installation)
 * [Contribution](#contribution)
 * [Elements](#elements)
-* [External Modules](#externalModules)
-* [Testing](#Testing)
+* [External Modules](#external-modules)
+* [Testing](#testing)
 * [TSLint](#tslint)
-* [External References](#externalReferences)
+* [External References](#external-references)
 
 ## Installation
 
