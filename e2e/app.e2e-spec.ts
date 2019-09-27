@@ -1,5 +1,5 @@
-import {AppPage} from './app.po';
-import {browser, by, element} from 'protractor';
+import { AppPage } from './app.po';
+import { browser, by, element } from 'protractor';
 
 describe('angular-boilerplate App', () => {
   let page: AppPage;

@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
+    "downlevelIteration": true,
     "importHelpers": true,
     "paths": {
       "*": [
@@ -16,7 +17,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -24,6 +25,6 @@
       "es2017",
       "dom"
     ],
-    "module": "es2015"
+    "module": "esnext"
   }
 }

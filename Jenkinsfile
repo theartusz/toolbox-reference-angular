@@ -19,17 +19,20 @@ ace(opts) {
     "-e npm_config_cache=.npm"
   ].join(" ")
 
-  String nodeVersion = "node:carbon"
+  String nodeVersion = "node:10"
 
   stage('npm tests') {
     checkout scm
     def testbed = docker.image(nodeVersion)
     testbed.inside(args) {
-      sh "npm ci"
-      sh "npm audit"
-      sh "npm run license-checker"
-      sh "npm run lint"
-      sh "npm run citest"
+      sh """
+      apt-get update && apt-get install -qy libx11-xcb-dev
+      npm ci
+      npm audit
+      npm run license-checker
+      npm run lint
+      npm run citest
+      """
     }
   }
 
