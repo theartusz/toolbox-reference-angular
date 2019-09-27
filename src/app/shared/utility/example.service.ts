@@ -9,6 +9,6 @@ export class ExampleService {
   }
 
   serviceExampleFunction(): Observable<boolean> {
-    return of(true);
+    return of(false);
   }
 }
