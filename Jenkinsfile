@@ -19,7 +19,7 @@ ace(opts) {
     "-e npm_config_cache=.npm"
   ].join(" ")
 
-  String nodeVersion = "node:carbon"
+  String nodeVersion = "node:12"
 
   stage('npm tests') {
     checkout scm

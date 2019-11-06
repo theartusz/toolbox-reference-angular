@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MatDatepickerInputEvent} from '@angular/material';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'boilerplate-google-material',
