@@ -6,16 +6,16 @@
     "baseUrl": "./",
     "module": "es2015",
     "types": [],
-    "paths": {
-    }
+    "paths": {}
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.stories.ts"
   ],
   "angularCompilerOptions": {
     "preserveWhitespaces": false,
     "skipMetadataEmit": true,
-    "annotateForClosureCompiler":true
+    "annotateForClosureCompiler": true
   }
 }

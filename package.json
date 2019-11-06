@@ -11,7 +11,9 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "ng e2e --proxy-config proxy.conf.json",
     "build": "ng build --prod --aot=true --source-map=false --build-optimizer=false",
-    "license-checker": "npx license-checker --summary --production --excludePackages 'angular-boilerplate@0.0.0' --onlyAllow 'MIT;ISC;Apache-2.0;Apache 2.0;BSD;WTFPL;Artistic-2.0;CC0-1.0;CC-BY-3.0;Unlicense;Public Domain;'"
+    "license-checker": "npx license-checker --summary --production --excludePackages 'angular-boilerplate@0.0.0' --onlyAllow 'MIT;ISC;Apache-2.0;Apache 2.0;BSD;WTFPL;Artistic-2.0;CC0-1.0;CC-BY-3.0;Unlicense;Public Domain;'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -45,9 +47,16 @@
     "@angular/cli": "^7.3.8",
     "@angular/compiler-cli": "^7.2.14",
     "@angular/language-service": "^7.2.14",
+    "@babel/core": "^7.7.0",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addon-notes": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/angular": "^5.2.5",
     "@types/jasmine": "~3.3.9",
     "@types/jasminewd2": "~2.0.6",
     "@types/node": "~11.11.3",
+    "babel-loader": "^8.0.6",
     "codelyzer": "~5.0.0-beta.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
