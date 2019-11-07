@@ -97,12 +97,6 @@ They are all implemented and used in the project.
 
 https://github.com/ngx-translate
 
-### Bootstrap 4
-
-The project is using Bootstrap 4, which is still in test phase but is considered pretty stable by the community. 
-
-https://v4-alpha.getbootstrap.com/
-
 ## Testing 
 
 End-to-end testing and Unit Testing are both supported in this project and can be used as followed:
