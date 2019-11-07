@@ -12,7 +12,6 @@
     "welcome": "You just navigated!",
     "back": "Back",
     "form": "Form with validation",
-    "material": "Google Material Components",
     "table": "Responsive table",
     "login" : "Login - using Firebase Auth (demo)"
   },
@@ -95,17 +94,5 @@
     "button": {
       "example": "Button"
     }
-  },
-  "material": {
-    "header": "Material Component",
-    "calender": {
-      "header": "Calender",
-      "choose_date": "Please choose date"
-    },
-    "input": {
-      "header": "Input Control",
-      "text": "Please enter text"
-    }
   }
-
 }
