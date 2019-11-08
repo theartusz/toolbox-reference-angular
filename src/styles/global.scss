@@ -1,0 +1,17 @@
+@import 'main';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body-font-family;
+  margin: 0;
+  padding: 0;
+}

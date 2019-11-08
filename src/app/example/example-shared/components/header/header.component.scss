@@ -1,0 +1,10 @@
+.header {
+  background-image: linear-gradient(to bottom left, purple, blue);
+}
+
+.header-inner {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 1rem 0;
+  width: calc(100% - 2rem);
+}

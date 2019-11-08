@@ -2,19 +2,13 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "experimentalDecorators": true,
-    "baseUrl": "./",
-    "types": [],
-    "paths": {
-    }
+    "types": []
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ],
-  "angularCompilerOptions": {
-    "preserveWhitespaces": false,
-    "skipMetadataEmit": true,
-    "annotateForClosureCompiler":true
-  }
+  ]
 }

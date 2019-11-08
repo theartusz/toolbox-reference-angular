@@ -1,14 +1,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "downlevelIteration": true,
     "importHelpers": true,
     "paths": {
+      "@env": ["environments/environment"],
+      "@shared/*": ["app/shared/*"],
+      "@services/*": ["app/core/services/index.ts"],
+      "@core/*": ["app/core/*"],
       "*": [
         "*",
-        "src/*",
-        "src/app/*"
+        "app/*"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -17,14 +20,19 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2015",
+
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
+      "es2019",
       "dom"
     ],
     "module": "esnext"
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

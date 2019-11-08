@@ -1,0 +1,6 @@
+<app-header></app-header>
+
+<div class="cat-name">{{ catName$ | async }}</div>
+<app-button class="generate-cat-name" (click)="generateCatName()" text="Generate new cat name"></app-button>
+
+<app-footer></app-footer>
