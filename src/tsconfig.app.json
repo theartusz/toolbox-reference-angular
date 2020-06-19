@@ -8,13 +8,16 @@
     "paths": {
     }
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ],
   "angularCompilerOptions": {
     "preserveWhitespaces": false,
     "skipMetadataEmit": true,
     "annotateForClosureCompiler":true
-  }
+  },
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
 }
