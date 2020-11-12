@@ -66,7 +66,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: github-evry-bergen/toolbox-reference-angular:${{ env.BRANCH_NAME }}-${{ env.SHORT_SHA }}
+          tags: ${{ secrets.MAZE_ACR_REGISTRY }}/github-evry-bergen/toolbox-reference-angular:${{ env.BRANCH_NAME }}-${{ env.SHORT_SHA }}
           #build-args: |
           #  arg1=value1
           #  arg2=value2
