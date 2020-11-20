@@ -8,10 +8,26 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: github-evry-bergen/toolbox-reference-angular
     steps:
       -
         name: Check out the repo
         uses: actions/checkout@v2
+      -
+        name: Get commit sha
+        shell: bash
+        run: echo "SHORT_SHA=$(echo -n ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
+      -
+        name: Get branch name (merge)
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo -n ${GITHUB_REF#refs/heads/} | tr -c '[:alnum:]' '-')" >> $GITHUB_ENV
+      -
+        name: Get branch name (pull request)
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo -n ${GITHUB_HEAD_REF} | tr -c '[:alnum:]' '-')" >> $GITHUB_ENV
       -
         name: Use Node.js
         uses: actions/setup-node@v1
@@ -33,20 +49,6 @@ jobs:
       - run: npm run citest
       - run: npm run build
       -
-        name: Get commit sha
-        shell: bash
-        run: echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
-      -
-        name: Get branch name (merge)
-        if: github.event_name != 'pull_request'
-        shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
-      -
-        name: Get branch name (pull request)
-        if: github.event_name == 'pull_request'
-        shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
-      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       -
@@ -66,10 +68,9 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.MAZE_ACR_REGISTRY }}/github-evry-bergen/toolbox-reference-angular:${{ env.BRANCH_NAME }}-${{ env.SHORT_SHA }}
-          #build-args: |
-          #  arg1=value1
-          #  arg2=value2
+          tags: |
+            ${{ secrets.MAZE_ACR_REGISTRY }}/${ IMAGE_NAME }:master-${{ env.SHORT_SHA }}
+            ${{ secrets.MAZE_ACR_REGISTRY }}/${ IMAGE_NAME }:develop-${{ env.SHORT_SHA }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
