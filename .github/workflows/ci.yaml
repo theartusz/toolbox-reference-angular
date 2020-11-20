@@ -69,8 +69,8 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ secrets.MAZE_ACR_REGISTRY }}/${ IMAGE_NAME }:master-${{ env.SHORT_SHA }}
-            ${{ secrets.MAZE_ACR_REGISTRY }}/${ IMAGE_NAME }:develop-${{ env.SHORT_SHA }}
+            ${{ secrets.MAZE_ACR_REGISTRY }}/${{ env.IMAGE_NAME }}:master-${{ env.SHORT_SHA }}
+            ${{ secrets.MAZE_ACR_REGISTRY }}/${{ env.IMAGE_NAME }}:develop-${{ env.SHORT_SHA }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
