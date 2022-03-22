@@ -61,6 +61,7 @@ jobs:
           registry: ${{ secrets.MAZE_ACR_REGISTRY }}
           username: ${{ secrets.MAZE_ACR_USERNAME }}
           password: ${{ secrets.MAZE_ACR_PASSWORD }}
+      - run: ts=$(date +%s)
       -
         name: Build and push
         id: docker_build
@@ -69,8 +70,8 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ secrets.MAZE_ACR_REGISTRY }}/${{ env.IMAGE_NAME }}:master-${{ env.SHORT_SHA }}-$(date +%s)
-            ${{ secrets.MAZE_ACR_REGISTRY }}/${{ env.IMAGE_NAME }}:develop-${{ env.SHORT_SHA }}-$(date +%s)
+            ${{ secrets.MAZE_ACR_REGISTRY }}/${{ env.IMAGE_NAME }}:master-${{ env.SHORT_SHA }}-${{ ts }}
+            ${{ secrets.MAZE_ACR_REGISTRY }}/${{ env.IMAGE_NAME }}:develop-${{ env.SHORT_SHA }}-${{ ts }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
