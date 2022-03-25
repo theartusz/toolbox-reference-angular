@@ -9,7 +9,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: github-evry-bergen/toolbox-reference-angular
+      IMAGE_NAME: reference-angular
     steps:
       -
         name: Check out the repo
